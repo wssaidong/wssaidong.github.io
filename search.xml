@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[门铃服务设计]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/09/14/%E9%97%A8%E9%93%83%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/</url>
+      <content type="html"><![CDATA[<h2 id="门铃服务设计"><a href="#门铃服务设计" class="headerlink" title="门铃服务设计"></a>门铃服务设计</h2><h3 id="无反馈形式"><a href="#无反馈形式" class="headerlink" title="无反馈形式"></a>无反馈形式</h3><h4 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h4><p><img src="http://i2.buimg.com/567571/3c61ed7ba47b72c5.png" alt="拓扑"></p>
+<blockquote>
+<p>门禁设备发送房号到服务器；<br>服务器根据房号数据，推送个推到手机和TV；<br>手机和TV接收到个推信息后，弹出视频窗口；<br>手机点击一键开门后，服务器发送开门指令到门禁设备；<br>服务器通过个推发送关闭弹屏指令。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>缺点</p>
+<ul>
+<li>关闭弹屏消息通过个推发送，延迟，不可靠</li>
+<li>关闭逻辑入侵大</li>
+</ul>
+</blockquote>
+<hr>
+<p>相关代码入口：<br>IOpenDoorService.openByDoorBell</p>
+<h3 id="mqtt-广播形式"><a href="#mqtt-广播形式" class="headerlink" title="mqtt 广播形式"></a>mqtt 广播形式</h3><h4 id="拓扑图-1"><a href="#拓扑图-1" class="headerlink" title="拓扑图"></a>拓扑图</h4><p><img src="http://i4.piimg.com/567571/7ce9cbbd4d306ef5.png" alt=""></p>
+<blockquote>
+<p>门禁设备发送房号到服务器；<br>服务器根据房号数据，推送个推到手机和TV；<br><strong>手机根据推送过来的门禁设备号，监听二级topic,/DoorBell/${deviceSn}<br>手机点击一键开门后，调用Htpp 接口，发送指令到服务器，服务器，把指令推送到<br>MQ服务，通过订阅，消费者订阅指令后，发送指令到门禁设备</strong> </p>
+</blockquote>
+<hr>
+<blockquote>
+<p>mqtt 接入方式</p>
+<ul>
+<li><a href="https://help.aliyun.com/document_detail/42421.html?spm=5176.doc29546.6.157.XBv9z1" target="_blank" rel="external">app</a></li>
+<li><a href="https://help.aliyun.com/document_detail/42424.html?spm=5176.doc42421.6.160.m1IveT" target="_blank" rel="external">服务端</a></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p>优点：</p>
+<ul>
+<li>指令在公有通道流转</li>
+<li>指令操作共享，可自行操作业务，减少个推依赖</li>
+</ul>
+</blockquote>
+<hr>
+<p>&gt;<br> 缺点：</p>
+<ul>
+<li>MQ 依赖高</li>
+<li>订阅消耗高</li>
+<li>指令发送流转复杂</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[统一日志收集]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/08/28/logstash/</url>
+      <content type="html"><![CDATA[<p>搭建统一日志收集系统</p>
+<h2 id="基础部件"><a href="#基础部件" class="headerlink" title="基础部件"></a>基础部件</h2><p><a href="https://www.elastic.co/" target="_blank" rel="external">elastic官网</a><br><a href="https://www.elastic.co/downloads/logstash" target="_blank" rel="external">logstash</a> 收集、过滤日志<br><a href="https://www.elastic.co/downloads/elasticsearch" target="_blank" rel="external">ElasticSearch</a> 全文搜索服务<br><a href="https://www.elastic.co/downloads/kibana" target="_blank" rel="external">kibana</a> 数据展示</p>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><blockquote>
+<p>tar -zxvf *.tar</p>
+</blockquote>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><h3 id="elasticsearch"><a href="#elasticsearch" class="headerlink" title="elasticsearch"></a>elasticsearch</h3><ul>
+<li>后台启动<blockquote>
+<p>nohup ./elasticsearch &amp;</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="logstash"><a href="#logstash" class="headerlink" title="logstash"></a>logstash</h3><ul>
+<li>创建配置<blockquote>
+<p>vi logstash.conf</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">input &#123;</div><div class="line">	tcp &#123;</div><div class="line">		port =&gt; 5678</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">filter &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">output &#123;</div><div class="line">	elasticsearch &#123;</div><div class="line">		hosts =&gt; [&quot;localhost:9200&quot;]</div><div class="line">	&#125;</div><div class="line">	stdout &#123; codec =&gt; rubydebug &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>后台启动<blockquote>
+<p>nohup ./logstash -f logstash.conf &amp;</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="kibana"><a href="#kibana" class="headerlink" title="kibana"></a>kibana</h3><ul>
+<li>后台启动<blockquote>
+<p>setsid ./kibana</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[微服务]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/08/13/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/</url>
+      <content type="html"><![CDATA[<p>docker和微服务架构实践</p>
+<ul>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/16-8-13/91937667-基于ngx_lua的动态服务路由方案.pdf" target="_blank" rel="external">基于ngx_lua的动态服务路由方案</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/3%20%E6%95%96%E5%B0%8F%E5%89%91%20PPmoney%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%B9%8B%E8%B7%AF.pdf" target="_blank" rel="external">PPmoney微服务之路</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/1%20%E9%82%B1%E6%88%88%E5%B7%9D%20%E5%94%AF%E5%93%81%E4%BC%9A%E7%AE%80%E6%98%93DCOS%E5%AE%9E%E8%B7%B5%E6%8E%A2%E8%AE%A8.pdf" target="_blank" rel="external">唯品会简易DCOS实践探讨</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[gradle构建jar包上传maven私服]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/08/13/gradle%E4%B8%8A%E4%BC%A0jar/</url>
+      <content type="html"><![CDATA[<p>目标</p>
+<blockquote>
+<p>在jenkins构建项目的时候把项目接口部分打成jar上传到maven私服。</p>
+</blockquote>
+<h2 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h2><h3 id="添加构建jar包的task"><a href="#添加构建jar包的task" class="headerlink" title="添加构建jar包的task"></a>添加构建jar包的task</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">group = &apos;***&apos;</div><div class="line">version = &apos;1.0.1&apos;</div><div class="line">def artifactId=&quot;***&quot;</div><div class="line">        ·</div><div class="line">        ·</div><div class="line">        ·</div><div class="line">task releaseApiJar(type:Jar) &#123;</div><div class="line">    classifier = &apos;api&apos;</div><div class="line">    from sourceSets.api.output</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="添加上传maven私服的插件"><a href="#添加上传maven私服的插件" class="headerlink" title="添加上传maven私服的插件"></a>添加上传maven私服的插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">artifacts&#123;</div><div class="line">        archives releaseApiJar</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies&#123;</div><div class="line">    ·</div><div class="line">    ·</div><div class="line">    ·</div><div class="line">    uploadArchives()&#123;</div><div class="line">        repositories&#123;</div><div class="line">            mavenDeployer&#123;</div><div class="line">                repository(url: &quot;http://path/nexus/content/repositories/releases/&quot;)&#123;</div><div class="line">                    authentication(userName: &quot;***&quot;,password: &quot;***&quot;)</div><div class="line">                &#125;</div><div class="line">                pom.version=&quot;$project.version&quot;</div><div class="line">                pom.groupId=&quot;$project.group&quot;</div><div class="line">                pom.artifactId=&quot;$artifactId&quot;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">     &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="修改jenkins配置"><a href="#修改jenkins配置" class="headerlink" title="修改jenkins配置"></a>修改jenkins配置</h3><p><img src="http://i2.piimg.com/567571/080478d0b75c2e44.png" alt=""></p>
+<p>好的！这样jenkins执行发布前就可以自动上传jar包了！</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[混合云]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/08/11/%E6%B7%B7%E5%90%88%E4%BA%91/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>混合云融合了公有云和私有云，是近年来云计算的主要模式和发展方向。我们已经知道私企业主要是面向企业用户，出于安全考虑，企业更愿意将数据存放在私有云中，但是同时又希望可以获得公有云的计算资源，在这种情况下混合云被越来越多的采用，它将公有云和私有云进行混合和匹配，以获得最佳的效果，这种个性化的解决方案，达到了既省钱又安全的目的。</p>
+</blockquote>
+<ul>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/16-8-11/56611188-01%20%E4%BC%A0%E7%BB%9F%E9%9B%B6%E5%94%AE%E5%85%A8%E6%B8%A0%E9%81%93%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B%E4%B9%8B%E8%B7%AF.pdf" target="_blank" rel="external">传统零售全渠道架构演进之路.pdf</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/02%20Bridging%20a%20Hybrid%20World%20with%20Hybrid%20Connectivity%20and%20Hybrid%20Hosting_UCloud%E4%BF%9E%E5%9C%86%E5%9C%86.pdf" target="_blank" rel="external">Bridging a Hybrid World with Hybrid Connectivity and Hybrid Hosting_UCloud俞圆圆.pdf</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/03%20%E6%B7%B7%E5%90%88%E4%B8%8E%E6%88%90%E9%95%BF_%E8%A6%81%E5%87%BA%E5%8F%91%E5%91%A8%E8%BE%B9%E6%B8%B8%E5%90%B4%E6%B5%A9.pdf" target="_blank" rel="external">混合与成长_要出发周边游吴浩.pdf</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[系统架构uml]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/08/07/system-uml-v1/</url>
+      <content type="html"><![CDATA[<p>目前系统架构原理图v1版本</p>
+<p>使用一台阿里云服务器对外提供主服务（1核1G）<br>使用一台私有的服务器（512M）提供备用服务，防止服务奔溃，最大限度减低硬件成本</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/16-8-7/55246436.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[七牛CDN加速github pages]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/08/01/qiniu/</url>
+      <content type="html"><![CDATA[<p>在国外的github pages真的好慢，而且分分钟被墙。为了加快访问速度，我决定使用<a href="http://www.qiniu.com/" target="_blank" rel="external">七牛</a>云存储给网页加速。</p>
+<h2 id="注册一个七牛云的账号"><a href="#注册一个七牛云的账号" class="headerlink" title="注册一个七牛云的账号"></a>注册一个七牛云的账号</h2><blockquote>
+<p>七牛免费提供10G存储空间，可以做<a href="http://caishaodong.17lephone.com/2016/07/31/tuchuang/" target="_blank" rel="external">图床</a>又可以加速博客。</p>
+<h2 id="注册后添加资源"><a href="#注册后添加资源" class="headerlink" title="注册后添加资源"></a>注册后添加资源</h2><p><img src="http://ob5tof7al.bkt.clouddn.com/16-8-1/55479058.jpg" alt=""></p>
+<h2 id="设置镜像存储"><a href="#设置镜像存储" class="headerlink" title="设置镜像存储"></a>设置镜像存储</h2><p>镜像存储设置为需要加速的域名，这个域名的内容会被缓存到这个存储空间，做为以后加速使用<br><img src="http://ob5tof7al.bkt.clouddn.com/16-8-1/9259612.jpg" alt=""></p>
+<h2 id="添加CDN域名"><a href="#添加CDN域名" class="headerlink" title="添加CDN域名"></a>添加CDN域名</h2><p>使用自定义域名，此域名需要自己申请，并备案，填写自己的域名后，并且CNAME到七牛提供的二级域名后，访问自己的自定义域名，便可加速访问到CDN缓存的资源。<br><img src="http://ob5tof7al.bkt.clouddn.com/16-8-1/52278361.jpg" alt=""></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[图床工具]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/07/31/tuchuang/</url>
+      <content type="html"><![CDATA[<p>编写markdown文档一定需要一个好的图床<br>在这里我推荐一个国内比较好用的图床工具<a href="http://yotuku.cn/" target="_blank" rel="external">极简图床</a><br>极简图床有chrome插件而且可以配合七牛云存储使用。<br><img src="http://ob5tof7al.bkt.clouddn.com/16-7-31/3370092.jpg" alt=""><br>赶快试试吧！</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux 删除mysql]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/07/24/mysql-remove/</url>
+      <content type="html"><![CDATA[<h2 id="移除mysql"><a href="#移除mysql" class="headerlink" title="移除mysql"></a>移除mysql</h2><ul>
+<li>yum remove mysql</li>
+</ul>
+<h2 id="移除dbbase"><a href="#移除dbbase" class="headerlink" title="移除dbbase"></a>移除dbbase</h2><ul>
+<li>rm -rf /var/lib/mysql</li>
+</ul>
+<h2 id="移除配置"><a href="#移除配置" class="headerlink" title="移除配置"></a>移除配置</h2><ul>
+<li>rm /etc/my.cnf</li>
+</ul>
+<h2 id="是否还有mysql软件"><a href="#是否还有mysql软件" class="headerlink" title="是否还有mysql软件"></a>是否还有mysql软件</h2><p>rpm -qa|grep mysql</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人博客搭建之旅（二）]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/07/23/blog-2/</url>
+      <content type="html"><![CDATA[<h1 id="使用hexo搭建github博客"><a href="#使用hexo搭建github博客" class="headerlink" title="使用hexo搭建github博客"></a>使用hexo搭建github博客</h1><h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><ul>
+<li>Node.js </li>
+</ul>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><blockquote>
+<p>npm install -g hexo-cli</p>
+</blockquote>
+<h1 id="hexo-详细文档"><a href="#hexo-详细文档" class="headerlink" title="hexo 详细文档"></a>hexo 详细文档</h1><ul>
+<li><a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">doc</a></li>
+</ul>
+<h1 id="hexo-主题"><a href="#hexo-主题" class="headerlink" title="hexo 主题"></a>hexo 主题</h1><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next/wiki/" target="_blank" rel="external">hexo.NEXT</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人博客搭建之旅]]></title>
+      <url>http://caishaodong.blog.17lephone.com/2016/07/21/blog/</url>
+      <content type="html"><![CDATA[<h1 id="个人博客搭建（一）"><a href="#个人博客搭建（一）" class="headerlink" title="个人博客搭建（一）"></a>个人博客搭建（一）</h1><h2 id="什么是GITHub-Pages？"><a href="#什么是GITHub-Pages？" class="headerlink" title="什么是GITHub Pages？"></a>什么是GITHub Pages？</h2><ul>
+<li>github pages有300M免费空间，资料自己管理，保存可靠</li>
+<li>上面有很多大牛，眼界会开阔很多，你也会成为大牛</li>
+<li>github很geek</li>
+<li>github pages 流量无线，免购买服务器，自主性高</li>
+</ul>
+<blockquote>
+<p>从国内<a href="http://my.oschina.net/orgsky/blog" target="_blank" rel="external">oschina</a> 转战 GITHUB</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>注册一个github 账号</li>
+<li>选择一个好用markdown工具<a href="https://www.zybuluo.com/" target="_blank" rel="external">CmdMarkdown</a></li>
+</ul>
+<h2 id="建立博客"><a href="#建立博客" class="headerlink" title="建立博客"></a>建立博客</h2><ul>
+<li><p>创建仓库</p>
+<blockquote>
+<p>仓库名字和账号名字一致，使用github.com 结尾</p>
+</blockquote>
+<p><img src="http://images.cnitblog.com/blog/275810/201303/07214321-2098fc71740240a7b33147881fa56d53.png" alt=""></p>
+</li>
+<li>设置主题<blockquote>
+<p>进入仓库的Settings<br><img src="http://images.cnitblog.com/blog/275810/201303/07214346-182c6e03424c4a74804530c5d61b9c72.png" alt=""><br>生成页面<br><img src="http://images.cnitblog.com/blog/275810/201303/07214412-d3e051f728a4498d8ea7841a04b48f38.png" alt=""><br>选择主题<br><img src="http://images.cnitblog.com/blog/275810/201303/07214438-a18d78f052f84d2fa2d57a93ed4e54b2.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p>一个属于自己的Blog 就这么容易弄好啦！准备你的Blog之旅吧！</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
