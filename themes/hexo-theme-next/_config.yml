@@ -142,7 +142,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: /cai.jpg
 
 
 # Table Of Contents in the Sidebar
@@ -180,8 +180,9 @@ sidebar:
 #links_title: Links
 #links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  æ˜é‡‘: https://juejin.im/timeline
+  åƒåœ¾å †: http://laystall.top
 
 
 # ---------------------------------------------------------------
@@ -239,7 +240,7 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-baidu_analytics: d35b446e00e8cb59b4a9f1ad31ae9865
+baidu_analytics: 0f97366e0e13f1983bc7975ce7000b94
 
 # Duoshuo ShortName
 duoshuo_shortname: wssaidong
@@ -279,7 +280,7 @@ duoshuo_info:
   ua_enable: true
   admin_enable: false
   user_id: 0
-  admin_nickname: ²æÉÕ
+  admin_nickname: å‰çƒ§
 
 
 # Facebook SDK Support.

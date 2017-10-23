@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: CAI_Blog
+title: Choi_Blog
 subtitle:
-description: 叉烧程序园
-author: 蔡少东
+description: caishaodong.top
+author: 叉烧
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://caishaodong.blog.17lephone.com/
+url: http://caishaodong.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
