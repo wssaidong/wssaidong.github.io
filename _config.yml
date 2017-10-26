@@ -72,5 +72,5 @@ theme: hexo-theme-next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://gitee.com/2449149803/2449149803.git
-  branch: pages
+  repo: https://github.com/wssaidong/wssaidong.github.io.git
+  branch: master
