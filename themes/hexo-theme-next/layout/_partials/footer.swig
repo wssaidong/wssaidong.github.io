@@ -6,4 +6,5 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
+  <span><a href='www.miitbeian.gov.cn'>‘¡ICP±∏17145653∫≈</a></span>
 </div>
