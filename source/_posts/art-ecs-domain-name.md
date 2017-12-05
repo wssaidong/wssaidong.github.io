@@ -20,10 +20,18 @@ tags:
 
 
 
-CNAME  可以将域名指向另外一个域名，所以我把自己的域名解析到我的github博客，这样就有一个属于自己个性话域名的博客了 http://blog.caishaodong.top/。
+CNAME  可以将域名指向另外一个域名，所以我把自己的域名解析到我的github博客，这样就有一个属于自己个性话域名的博客了 http://blog.caishaodong.top
+
+想知道怎么搭建一个自己个性的博客 blog 请参考一下博文
+
+个人博客搭建之旅
+
+- http://blog.caishaodong.top/2016/07/21/art-blog/ 
+- http://blog.caishaodong.top/2016/07/23/art-blog-2/
 
 A 记录我配置了两个
 
 @ 记录是指域名不需要www就可以访问到一个含有外网地址的主机
 
 www 记录则是需要www前缀的域名访问
+
