@@ -2,6 +2,7 @@
 title: 个人博客搭建之旅 
 date: 2016-07-21 22:28:00
 categories: 程序员素养
+comments: true
 tags: 
  - blog 
  - github

@@ -156,7 +156,7 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-creative_commons: by-nc-sa
+#creative_commons: by-nc-sa
 #creative_commons:
 
 
@@ -246,7 +246,7 @@ baidu_analytics: 0f97366e0e13f1983bc7975ce7000b94
 duoshuo_shortname: wssaidong
 
 # Disqus
-#disqus_shortname:
+disqus_shortname: 叉烧
 
 # Baidu Share
 # Available value:
@@ -281,6 +281,10 @@ duoshuo_info:
   admin_enable: false
   user_id: 0
   admin_nickname: 叉烧
+
+# changyan
+changyan_appid: cytu1XwwX
+changyan_appkey: fec04b4de80d813368102780038da18e
 
 
 # Facebook SDK Support.

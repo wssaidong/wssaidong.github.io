@@ -62,4 +62,5 @@
 {% block comment_system %}
   {% include '_scripts/comments/duoshuo.swig' %}
   {% include '_scripts/comments/disqus.swig' %}
+  {% include '_scripts/comments/changyan.swig' %}
 {% endblock %}
