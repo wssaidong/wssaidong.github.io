@@ -22,9 +22,7 @@
 </div>
 
 {% if theme.footer.powered %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }}{#
-#}</div>
+  <div class="powered-by"><a class="theme-link" target="_blank" href="http://www.miitbeian.gov.cn">粤ICP备17145653号</a></div>
 {% endif %}
 
 {% if theme.footer.powered and theme.footer.theme.enable %}
