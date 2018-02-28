@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: http://caishaodong.top/sitemap.xml
+Sitemap: http://caishaodong.top/baidusitemap.xml

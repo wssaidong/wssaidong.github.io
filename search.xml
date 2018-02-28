@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[使用又拍云的cdn加速GitHub Pages]]></title>
+      <url>http://caishaodong.top/2018/02/27/art-upyun-cdn/</url>
+      <content type="html"><![CDATA[<p>在GitHubPages上搭建个人博客后,你会发现Github屏蔽百度爬虫导致在Github Pages上托管的博客、网站都无法被百度索引到。</p>
+<p>那么小编想到的是用CDN来加速自己博客，我采用的是<a href="https://www.upyun.com/" target="_blank" rel="noopener">又拍云</a>的CDN。</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/33066863.jpg" alt=""></p>
+<p>我们需要创建一个CDN 服务</p>
+<ul>
+<li>服务名称自定义一个唯一的即可</li>
+<li>加速域名(填写github pages 的自定义域名，并不是github 分配的那个 xxx.github.io)</li>
+<li>源站地址(填写xxx.github.io github默认分配的域名)</li>
+</ul>
+<p>这样 一个CDN 服务就建立成功。</p>
+<p>然后我们需要配置自己的域名的DNS</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/61176403.jpg" alt=""></p>
+<p>这里需要的是把加速域名指向又拍云CDN分配给你的域名</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/44600514.jpg" alt=""></p>
+<p>最后需要的是配置github pages 的自定义域名</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/58301774.jpg" alt=""></p>
+<p>等所有配置都生效后，你会发现现在的网站来源改变了。</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/22797715.jpg" alt=""></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> upyun </tag>
+            
+            <tag> cdn </tag>
+            
+            <tag> gitpages </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[markdown语法]]></title>
+      <url>http://caishaodong.top/2018/02/25/art-markdown/</url>
+      <content type="html"><![CDATA[<h1 id="标题设置（让字体变大，和word的标题意思一样）"><a href="#标题设置（让字体变大，和word的标题意思一样）" class="headerlink" title="标题设置（让字体变大，和word的标题意思一样）"></a>标题设置（让字体变大，和word的标题意思一样）</h1><p>在Markdown当中设置标题，有两种方式：<br>第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。<br>第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）</p>
+<h1 id="块注释（blockquote）"><a href="#块注释（blockquote）" class="headerlink" title="块注释（blockquote）"></a>块注释（blockquote）</h1><p>通过在文字开头添加“&gt;”表示块注释。（当&gt;和文字之间添加五个blank时，块注释的文字会有变化。）</p>
+<h1 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h1><p>将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来</p>
+<h1 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h1><p>将需要设置为斜体的文字两端使用2个“*”或者“_”夹起来</p>
+<h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><p>在文字开头添加(<em>, +, and -)实现无序列表。但是要注意在(</em>, +, and -)和文字之间需要添加空格。（建议：一个文档中只是用一种无序列表的表示方式）</p>
+<h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><p>使用数字后面跟上句号。（还要有空格）</p>
+<h1 id="链接（Links"><a href="#链接（Links" class="headerlink" title="链接（Links"></a>链接（Links</h1><p>Markdown中有两种方式，实现链接，分别为内联方式和引用方式。</p>
+<p>内联方式：This is an <a href="http://example.com/" target="_blank" rel="noopener">example link</a>.<br>引用方式：<br>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="noopener">Google</a> than from <a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="noopener">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="noopener">MSN</a>.  </p>
+<h1 id="图片（Images）"><a href="#图片（Images）" class="headerlink" title="图片（Images）"></a>图片（Images）</h1><p>图片的处理方式和链接的处理方式，非常的类似。<br>内联方式：<img src="/path/to/img.jpg" alt="alt text" title="Title"><br>引用方式：<br><img src="/path/to/img.jpg" alt="alt text" title="Title"> </p>
+<h1 id="代码（HTML中所谓的Code）"><a href="#代码（HTML中所谓的Code）" class="headerlink" title="代码（HTML中所谓的Code）"></a>代码（HTML中所谓的Code）</h1><p>实现方式有两种：<br>第一种：简单文字出现一个代码框。使用<code>&lt;blockquote&gt;</code>。（<code>不是单引号而是左上角的ESC下面~中的</code>）<br>第二种：大片文字需要实现代码框。使用Tab和四个空格。</p>
+<h1 id="脚注（footnote）"><a href="#脚注（footnote）" class="headerlink" title="脚注（footnote）"></a>脚注（footnote）</h1><p>实现方式如下：<br>hello<a href="hi">^hello</a></p>
+<h1 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h1><p>在空白行下方添加三条“-”横线。（前面讲过在文字下方添加“-”，实现的2级标题）</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> md </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[swarm配置]]></title>
+      <url>http://caishaodong.top/2017/12/06/art-ecs-swarm/</url>
+      <content type="html"><![CDATA[<p>ecs安装好docker服务后，我们需要配置swarm集群。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化</span><br><span class="line">docker swarm init</span><br><span class="line">docker swarm join</span><br><span class="line">创建network</span><br><span class="line">docker network create -d overlay --subnet=192.168.66.0/24 [name]</span><br></pre></td></tr></table></figure>
+<p>我们采用docker后，当容器销毁后再创建，我们会发现数据是不存在的，所以我们再这里要用到volumn</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql 创建实例</span><br><span class="line">docker volume create mysqlconfig</span><br><span class="line">docker service create --with-registry-auth --network [name] --name mysql \</span><br><span class="line"> -e MYSQL_ROOT_PASSWORD= \</span><br><span class="line"> -p 3306:3306 \</span><br><span class="line"> --constraint &apos;node.role == manager&apos; \</span><br><span class="line"> --mount type=volume,source=mysqlconfig,destination=/etc/mysql \</span><br><span class="line"> --mount type=volume,source=mysqldata,destination=/var/lib/mysql \</span><br><span class="line"> --log-opt max-size=100m --log-opt max-file=3  mysql:5.6.36</span><br></pre></td></tr></table></figure>
+<p>使用swarm后，我们需要安装可视化的界面进行swarm的管理，在这里我采取<a href="https://portainer.io/" target="_blank" rel="noopener">https://portainer.io/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ docker service create \</span><br><span class="line">--name portainer \</span><br><span class="line">--publish 9000:9000 \</span><br><span class="line">--replicas=1 \</span><br><span class="line">--constraint &apos;node.role == manager&apos; \</span><br><span class="line">--mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \</span><br><span class="line">portainer/portainer \</span><br><span class="line">-H unix:///var/run/docker.sock</span><br></pre></td></tr></table></figure>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/17-12-6/32112836.jpg" alt=""></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> swarm </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[阿里云docker配置]]></title>
+      <url>http://caishaodong.top/2017/12/05/art-ecs-docker/</url>
+      <content type="html"><![CDATA[<h3 id="ecs配置docker环境"><a href="#ecs配置docker环境" class="headerlink" title="ecs配置docker环境"></a>ecs配置docker环境</h3><blockquote>
+<p>阿里云容器镜像服务</p>
+<p><a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a></p>
+<p>安装流程</p>
+<p><a href="https://yq.aliyun.com/articles/110806?spm=a2c1q.8351553.0.0.1e5d017aSKNU5U" target="_blank" rel="noopener">https://yq.aliyun.com/articles/110806?spm=a2c1q.8351553.0.0.1e5d017aSKNU5U</a></p>
+</blockquote>
+<p>在阿里云的容器镜像服务里面我们可以创建自己的镜像仓库为后续的持续集成做准备</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/17-12-5/37186347.jpg" alt=""></p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/17-12-5/44789231.jpg" alt=""></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> aliyun </tag>
+            
+            <tag> docker </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[nginx 配置]]></title>
+      <url>http://caishaodong.top/2017/12/04/art-ecs-nginx/</url>
+      <content type="html"><![CDATA[<p>nginx 是服务端必不可少的中间件，使用nginx的反向代理，我们可以做负载均衡，我们也可以使用nginx作为静态资源的容器。</p>
+<p>下面我们展示一下比较常见的nginx配置</p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">location = / &#123;</span><br><span class="line">      rewrite  ^/    http://localhost;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">  location ^~ /fcl/ &#123;</span><br><span class="line">      proxy_pass   http://localhost;</span><br><span class="line">      proxy_cookie_path /fcl /;</span><br><span class="line">      proxy_redirect             off;</span><br><span class="line">      #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</span><br><span class="line">      proxy_set_header           Host $host;</span><br><span class="line">      proxy_set_header           X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header           X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        location /image/ &#123;</span><br><span class="line">            root   /usr/local/myImage/;</span><br><span class="line">            autoindex on;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop</span><br><span class="line">nginx -s start</span><br><span class="line">nginx -s reload</span><br><span class="line">nginx -c nginx.conf</span><br><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[md文档]]></title>
+      <url>http://caishaodong.top/2017/11/30/art-ecs-md/</url>
+      <content type="html"><![CDATA[<p>有了自己的个人博客，那必须会写markdown[md]文档，md文档的语法我就不多说啦！今天注解介绍一下我写md的工具流。</p>
+<p>md 语法访问一下链接</p>
+<p><a href="http://blog.csdn.net/witnessai1/article/details/52551362" target="_blank" rel="noopener">http://blog.csdn.net/witnessai1/article/details/52551362</a></p>
+<p>windows 下我推荐使用 <a href="http://www.softpedia.com/get/Internet/WEB-Design/HTML-Editors/Typora.shtml" target="_blank" rel="noopener">Typora</a> 这个工具</p>
+<p><a href="http://jingyan.baidu.com/article/09ea3ede151af8c0afde397e.html?allowHTTP=1" target="_blank" rel="noopener">http://jingyan.baidu.com/article/09ea3ede151af8c0afde397e.html?allowHTTP=1</a></p>
+<p>写md 必然不能缺一个好的图床工具</p>
+<p><a href="http://jiantuku.com/#/" target="_blank" rel="noopener">极简图床</a> </p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/17-11-30/59123638.jpg" alt=""></p>
+<p>有了这些准备好，写md再也不是一个难事了。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> md </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[阿里云域名解析]]></title>
+      <url>http://caishaodong.top/2017/11/29/art-ecs-domain-name/</url>
+      <content type="html"><![CDATA[<p>购买ecs后，一般所有的ecs都会配备一个外网IP，通过IP地址我们可以访问到我们部署到ecs的服务，但是这个一个长的IP地址怎么能记得住呢，这个时候我们就需要一个域名。</p>
+<p>通过阿里云-<a href="https://wanwang.aliyun.com/?spm=5176.10695662.765261.238.5741366ikaTqx" target="_blank" rel="noopener">万网</a> 购买自己喜欢的域名，购买ecs一般也会送域名。</p>
+<p>购买域名后进入域名的dns 解析配置页面，就可以进行配置。</p>
+<p>我们一般会配置什么呢？在我看来，我一般会配置以下几个记录。</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/17-11-29/26191885.jpg" alt=""></p>
+<p>CNAME  可以将域名指向另外一个域名，所以我把自己的域名解析到我的github博客，这样就有一个属于自己个性话域名的博客了 <a href="http://blog.caishaodong.top" target="_blank" rel="noopener">http://blog.caishaodong.top</a></p>
+<p>想知道怎么搭建一个自己个性的博客 blog 请参考一下博文</p>
+<p>个人博客搭建之旅</p>
+<ul>
+<li><a href="http://blog.caishaodong.top/2016/07/21/art-blog/" target="_blank" rel="noopener">http://blog.caishaodong.top/2016/07/21/art-blog/</a> </li>
+<li><a href="http://blog.caishaodong.top/2016/07/23/art-blog-2/" target="_blank" rel="noopener">http://blog.caishaodong.top/2016/07/23/art-blog-2/</a></li>
+</ul>
+<p>A 记录我配置了两个</p>
+<p>@ 记录是指域名不需要www就可以访问到一个含有外网地址的主机</p>
+<p>www 记录则是需要www前缀的域名访问</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> ecs </tag>
+            
+            <tag> dns </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[玩转ecs]]></title>
+      <url>http://caishaodong.top/2017/11/27/art-ecs-all/</url>
+      <content type="html"><![CDATA[<p>有人说，作为一个后端工程师，必须要有一个自己的服务器。有些人买了服务器后，又不知道用服务器可以做些什么，那么今天我就分享一下，我是怎么玩我的ecs的。</p>
+<p>我大概会以一下几个方面去展开ecs的用途和使用。</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/17-11-27/74716142.jpg" alt=""></p>
+<p>顺道推荐一个在线的脑图工具：<a href="http://naotu.baidu.com" target="_blank" rel="noopener">百度脑图</a></p>
+<p>要玩服务器，那么必先采购一台ecs，作为入门者，我们购买一个1核1G的服务器就够了。</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/17-11-27/72438635.jpg" alt=""></p>
+<p>以一年购是比较划算的，购买后，便算正式进入玩转ecs之旅。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> aliyun </tag>
+            
+            <tag> ecs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ecs部署结构]]></title>
+      <url>http://caishaodong.top/2017/10/23/art-ecs/</url>
+      <content type="html"><![CDATA[<h3 id="ecs基础结构"><a href="#ecs基础结构" class="headerlink" title="ecs基础结构"></a>ecs基础结构</h3><p><img src="http://ob5tof7al.bkt.clouddn.com/17-10-23/21074412.jpg" alt="ecs"></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> ecs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[alibaba/p3c]]></title>
+      <url>http://caishaodong.top/2017/10/20/rcm-git/</url>
+      <content type="html"><![CDATA[<h3 id="alibaba-p3c"><a href="#alibaba-p3c" class="headerlink" title="alibaba/p3c"></a><a href="https://github.com/alibaba" target="_blank" rel="noopener">alibaba</a>/<strong>p3c</strong></h3><h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4><p><a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a></p>
+<h4 id="doc"><a href="#doc" class="headerlink" title="doc"></a>doc</h4><p><a href="https://github.com/alibaba/p3c/blob/master/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%EF%BC%88%E7%BB%88%E6%9E%81%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">https://github.com/alibaba/p3c/blob/master/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%EF%BC%88%E7%BB%88%E6%9E%81%E7%89%88%EF%BC%89.pdf</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[docker 成长之路]]></title>
+      <url>http://caishaodong.top/2017/10/17/art-docker/</url>
+      <content type="html"><![CDATA[<h3 id="Docker-映像命名规范"><a href="#Docker-映像命名规范" class="headerlink" title="Docker 映像命名规范"></a>Docker 映像命名规范</h3><blockquote>
+<p>NameSpace/Repository:Version</p>
+</blockquote>
+<h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><blockquote>
+<p>$docker build -t saravasu/techietweak:001 .</p>
+</blockquote>
+<h3 id="映像"><a href="#映像" class="headerlink" title="映像"></a>映像</h3><blockquote>
+<p>$docker images</p>
+</blockquote>
+<h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><blockquote>
+<p>$docker run -d -p 8080:8080 saravasu/techietweak:001</p>
+</blockquote>
+<h3 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h3><blockquote>
+<p>docker ps -a</p>
+</blockquote>
+<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><blockquote>
+<p>$docker exec -it containerId /bin/bash</p>
+<p>$docker stop <containername></containername></p>
+</blockquote>
+<h3 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h3><blockquote>
+<p>$docker rm imageId</p>
+<p>$docker rmi -f <list of="" image="" ids=""></list></p>
+<p>$docker rmi -f $(docker images | tr -s ‘ ‘ ‘ ‘ | cut -d’ ‘ -f3)</p>
+</blockquote>
+<h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><blockquote>
+<p>docker logs -f –tail 100 <containername></containername></p>
+</blockquote>
+<h3 id="Docker-service"><a href="#Docker-service" class="headerlink" title="Docker service"></a>Docker service</h3><h3 id="初始化docker-swarm"><a href="#初始化docker-swarm" class="headerlink" title="初始化docker swarm"></a>初始化docker swarm</h3><blockquote>
+<p>docker swarm init</p>
+</blockquote>
+<h3 id="初始化docker-join"><a href="#初始化docker-join" class="headerlink" title="初始化docker join"></a>初始化docker join</h3><blockquote>
+<p>docker swarm join</p>
+</blockquote>
+<h3 id="创建network"><a href="#创建network" class="headerlink" title="创建network"></a>创建network</h3><blockquote>
+<p>docker network create -d overlay –subnet=192.168.66.0/24 [name]</p>
+</blockquote>
+<h3 id="创建mysql-volumn"><a href="#创建mysql-volumn" class="headerlink" title="创建mysql volumn"></a>创建mysql volumn</h3><blockquote>
+<p>docker volume create mysqlconfig</p>
+<p>docker volume create mysqldata</p>
+</blockquote>
+<h3 id="创建mysql"><a href="#创建mysql" class="headerlink" title="创建mysql"></a>创建mysql</h3><hr>
+<p>docker service create –with-registry-auth –network [name] –name mysql \<br> -e MYSQL_ROOT_PASSWORD= \<br> -p 3306:3306 \<br> –constraint ‘node.role == manager’ \<br> –mount type=volume,source=mysqlconfig,destination=/etc/mysql \<br> –mount type=volume,source=mysqldata,destination=/var/lib/mysql \<br> –log-opt max-size=100m –log-opt max-file=3  mysql:5.6.36</p>
+<hr>
+<h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><blockquote>
+<p>docker service create –with-registry-auth –network [name] –name redis redis</p>
+</blockquote>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[门铃服务设计]]></title>
+      <url>http://caishaodong.top/2016/09/14/ds-%E9%97%A8%E9%93%83%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/</url>
+      <content type="html"><![CDATA[<h2 id="门铃服务设计"><a href="#门铃服务设计" class="headerlink" title="门铃服务设计"></a>门铃服务设计</h2><h3 id="无反馈形式"><a href="#无反馈形式" class="headerlink" title="无反馈形式"></a>无反馈形式</h3><h4 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h4><p><img src="http://i2.buimg.com/567571/3c61ed7ba47b72c5.png" alt="拓扑"></p>
+<blockquote>
+<p>门禁设备发送房号到服务器；<br>服务器根据房号数据，推送个推到手机和TV；<br>手机和TV接收到个推信息后，弹出视频窗口；<br>手机点击一键开门后，服务器发送开门指令到门禁设备；<br>服务器通过个推发送关闭弹屏指令。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>缺点</p>
+<ul>
+<li>关闭弹屏消息通过个推发送，延迟，不可靠</li>
+<li>关闭逻辑入侵大</li>
+</ul>
+</blockquote>
+<hr>
+<p>相关代码入口：<br>IOpenDoorService.openByDoorBell</p>
+<h3 id="mqtt-广播形式"><a href="#mqtt-广播形式" class="headerlink" title="mqtt 广播形式"></a>mqtt 广播形式</h3><h4 id="拓扑图-1"><a href="#拓扑图-1" class="headerlink" title="拓扑图"></a>拓扑图</h4><p><img src="http://i4.piimg.com/567571/7ce9cbbd4d306ef5.png" alt=""></p>
+<blockquote>
+<p>门禁设备发送房号到服务器；<br>服务器根据房号数据，推送个推到手机和TV；<br><strong>手机根据推送过来的门禁设备号，监听二级topic,/DoorBell/${deviceSn}<br>手机点击一键开门后，调用Htpp 接口，发送指令到服务器，服务器，把指令推送到<br>MQ服务，通过订阅，消费者订阅指令后，发送指令到门禁设备</strong> </p>
+</blockquote>
+<hr>
+<blockquote>
+<p>mqtt 接入方式</p>
+<ul>
+<li><a href="https://help.aliyun.com/document_detail/42421.html?spm=5176.doc29546.6.157.XBv9z1" target="_blank" rel="noopener">app</a></li>
+<li><a href="https://help.aliyun.com/document_detail/42424.html?spm=5176.doc42421.6.160.m1IveT" target="_blank" rel="noopener">服务端</a></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p>优点：</p>
+<ul>
+<li>指令在公有通道流转</li>
+<li>指令操作共享，可自行操作业务，减少个推依赖</li>
+</ul>
+</blockquote>
+<hr>
+<p>&gt;<br> 缺点：</p>
+<ul>
+<li>MQ 依赖高</li>
+<li>订阅消耗高</li>
+<li>指令发送流转复杂</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 设计 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mq </tag>
+            
+            <tag> mqtt </tag>
+            
+            <tag> 物联网 </tag>
+            
+            <tag> iot </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[统一日志收集]]></title>
+      <url>http://caishaodong.top/2016/08/28/art-logstash/</url>
+      <content type="html"><![CDATA[<p>搭建统一日志收集系统</p>
+<h2 id="基础部件"><a href="#基础部件" class="headerlink" title="基础部件"></a>基础部件</h2><p><a href="https://www.elastic.co/" target="_blank" rel="noopener">elastic官网</a><br><a href="https://www.elastic.co/downloads/logstash" target="_blank" rel="noopener">logstash</a> 收集、过滤日志<br><a href="https://www.elastic.co/downloads/elasticsearch" target="_blank" rel="noopener">ElasticSearch</a> 全文搜索服务<br><a href="https://www.elastic.co/downloads/kibana" target="_blank" rel="noopener">kibana</a> 数据展示</p>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><blockquote>
+<p>tar -zxvf *.tar</p>
+</blockquote>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><h3 id="elasticsearch"><a href="#elasticsearch" class="headerlink" title="elasticsearch"></a>elasticsearch</h3><ul>
+<li>后台启动<blockquote>
+<p>nohup ./elasticsearch &amp;</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="logstash"><a href="#logstash" class="headerlink" title="logstash"></a>logstash</h3><ul>
+<li>创建配置<blockquote>
+<p>vi logstash.conf</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">	tcp &#123;</span><br><span class="line">		port =&gt; 5678</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">filter &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">output &#123;</span><br><span class="line">	elasticsearch &#123;</span><br><span class="line">		hosts =&gt; [&quot;localhost:9200&quot;]</span><br><span class="line">	&#125;</span><br><span class="line">	stdout &#123; codec =&gt; rubydebug &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>后台启动<blockquote>
+<p>nohup ./logstash -f logstash.conf &amp;</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="kibana"><a href="#kibana" class="headerlink" title="kibana"></a>kibana</h3><ul>
+<li>后台启动<blockquote>
+<p>setsid ./kibana</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 架构 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 日志收集 </tag>
+            
+            <tag> log </tag>
+            
+            <tag> elk </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[微服务]]></title>
+      <url>http://caishaodong.top/2016/08/13/s-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/</url>
+      <content type="html"><![CDATA[<p>docker和微服务架构实践</p>
+<ul>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/16-8-13/91937667-基于ngx_lua的动态服务路由方案.pdf" target="_blank" rel="noopener">基于ngx_lua的动态服务路由方案</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/3%20%E6%95%96%E5%B0%8F%E5%89%91%20PPmoney%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%B9%8B%E8%B7%AF.pdf" target="_blank" rel="noopener">PPmoney微服务之路</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/1%20%E9%82%B1%E6%88%88%E5%B7%9D%20%E5%94%AF%E5%93%81%E4%BC%9A%E7%AE%80%E6%98%93DCOS%E5%AE%9E%E8%B7%B5%E6%8E%A2%E8%AE%A8.pdf" target="_blank" rel="noopener">唯品会简易DCOS实践探讨</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> PPT </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 微服务 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[gradle构建jar包上传maven私服]]></title>
+      <url>http://caishaodong.top/2016/08/13/art-gradle%E4%B8%8A%E4%BC%A0jar/</url>
+      <content type="html"><![CDATA[<p>目标</p>
+<blockquote>
+<p>在jenkins构建项目的时候把项目接口部分打成jar上传到maven私服。</p>
+</blockquote>
+<h2 id="gradle配置"><a href="#gradle配置" class="headerlink" title="gradle配置"></a>gradle配置</h2><h3 id="添加构建jar包的task"><a href="#添加构建jar包的task" class="headerlink" title="添加构建jar包的task"></a>添加构建jar包的task</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">group = &apos;***&apos;</span><br><span class="line">version = &apos;1.0.1&apos;</span><br><span class="line">def artifactId=&quot;***&quot;</span><br><span class="line">        ·</span><br><span class="line">        ·</span><br><span class="line">        ·</span><br><span class="line">task releaseApiJar(type:Jar) &#123;</span><br><span class="line">    classifier = &apos;api&apos;</span><br><span class="line">    from sourceSets.api.output</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="添加上传maven私服的插件"><a href="#添加上传maven私服的插件" class="headerlink" title="添加上传maven私服的插件"></a>添加上传maven私服的插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">artifacts&#123;</span><br><span class="line">        archives releaseApiJar</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies&#123;</span><br><span class="line">    ·</span><br><span class="line">    ·</span><br><span class="line">    ·</span><br><span class="line">    uploadArchives()&#123;</span><br><span class="line">        repositories&#123;</span><br><span class="line">            mavenDeployer&#123;</span><br><span class="line">                repository(url: &quot;http://path/nexus/content/repositories/releases/&quot;)&#123;</span><br><span class="line">                    authentication(userName: &quot;***&quot;,password: &quot;***&quot;)</span><br><span class="line">                &#125;</span><br><span class="line">                pom.version=&quot;$project.version&quot;</span><br><span class="line">                pom.groupId=&quot;$project.group&quot;</span><br><span class="line">                pom.artifactId=&quot;$artifactId&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="修改jenkins配置"><a href="#修改jenkins配置" class="headerlink" title="修改jenkins配置"></a>修改jenkins配置</h3><p><img src="http://i2.piimg.com/567571/080478d0b75c2e44.png" alt=""></p>
+<p>好的！这样jenkins执行发布前就可以自动上传jar包了！</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 持续集成 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> gradle </tag>
+            
+            <tag> jenkins </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[混合云]]></title>
+      <url>http://caishaodong.top/2016/08/11/s-%E6%B7%B7%E5%90%88%E4%BA%91/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>混合云融合了公有云和私有云，是近年来云计算的主要模式和发展方向。我们已经知道私企业主要是面向企业用户，出于安全考虑，企业更愿意将数据存放在私有云中，但是同时又希望可以获得公有云的计算资源，在这种情况下混合云被越来越多的采用，它将公有云和私有云进行混合和匹配，以获得最佳的效果，这种个性化的解决方案，达到了既省钱又安全的目的。</p>
+</blockquote>
+<ul>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/16-8-11/56611188-01%20%E4%BC%A0%E7%BB%9F%E9%9B%B6%E5%94%AE%E5%85%A8%E6%B8%A0%E9%81%93%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B%E4%B9%8B%E8%B7%AF.pdf" target="_blank" rel="noopener">传统零售全渠道架构演进之路.pdf</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/02%20Bridging%20a%20Hybrid%20World%20with%20Hybrid%20Connectivity%20and%20Hybrid%20Hosting_UCloud%E4%BF%9E%E5%9C%86%E5%9C%86.pdf" target="_blank" rel="noopener">Bridging a Hybrid World with Hybrid Connectivity and Hybrid Hosting_UCloud俞圆圆.pdf</a></li>
+<li><a href="http://ob5tof7al.bkt.clouddn.com/03%20%E6%B7%B7%E5%90%88%E4%B8%8E%E6%88%90%E9%95%BF_%E8%A6%81%E5%87%BA%E5%8F%91%E5%91%A8%E8%BE%B9%E6%B8%B8%E5%90%B4%E6%B5%A9.pdf" target="_blank" rel="noopener">混合与成长_要出发周边游吴浩.pdf</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 系统架构 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 混合云 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[系统架构uml]]></title>
+      <url>http://caishaodong.top/2016/08/07/ds-system-uml-v1/</url>
+      <content type="html"><![CDATA[<p>目前系统架构原理图v1版本</p>
+<p>使用一台阿里云服务器对外提供主服务（1核1G）<br>使用一台私有的服务器（512M）提供备用服务，防止服务奔溃，最大限度减低硬件成本</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/16-8-7/55246436.jpg" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 系统架构 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> uml </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[七牛CDN加速github pages]]></title>
+      <url>http://caishaodong.top/2016/08/01/art-qiniu/</url>
+      <content type="html"><![CDATA[<p>在国外的github pages真的好慢，而且分分钟被墙。为了加快访问速度，我决定使用<a href="http://www.qiniu.com/" target="_blank" rel="noopener">七牛</a>云存储给网页加速。</p>
+<h2 id="注册一个七牛云的账号"><a href="#注册一个七牛云的账号" class="headerlink" title="注册一个七牛云的账号"></a>注册一个七牛云的账号</h2><blockquote>
+<p>七牛免费提供10G存储空间，可以做<a href="http://caishaodong.17lephone.com/2016/07/31/tuchuang/" target="_blank" rel="noopener">图床</a>又可以加速博客。</p>
+<h2 id="注册后添加资源"><a href="#注册后添加资源" class="headerlink" title="注册后添加资源"></a>注册后添加资源</h2><p><img src="http://ob5tof7al.bkt.clouddn.com/16-8-1/55479058.jpg" alt=""></p>
+<h2 id="设置镜像存储"><a href="#设置镜像存储" class="headerlink" title="设置镜像存储"></a>设置镜像存储</h2><p>镜像存储设置为需要加速的域名，这个域名的内容会被缓存到这个存储空间，做为以后加速使用<br><img src="http://ob5tof7al.bkt.clouddn.com/16-8-1/9259612.jpg" alt=""></p>
+<h2 id="添加CDN域名"><a href="#添加CDN域名" class="headerlink" title="添加CDN域名"></a>添加CDN域名</h2><p>使用自定义域名，此域名需要自己申请，并备案，填写自己的域名后，并且CNAME到七牛提供的二级域名后，访问自己的自定义域名，便可加速访问到CDN缓存的资源。<br><img src="http://ob5tof7al.bkt.clouddn.com/16-8-1/52278361.jpg" alt=""></p>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> qiniu </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[图床工具]]></title>
+      <url>http://caishaodong.top/2016/07/31/art-tuchuang/</url>
+      <content type="html"><![CDATA[<p>编写markdown文档一定需要一个好的图床<br>在这里我推荐一个国内比较好用的图床工具<a href="http://yotuku.cn/" target="_blank" rel="noopener">极简图床</a><br>极简图床有chrome插件而且可以配合七牛云存储使用。<br><img src="http://ob5tof7al.bkt.clouddn.com/16-7-31/3370092.jpg" alt=""><br>赶快试试吧！</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 程序员素养 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux 删除mysql]]></title>
+      <url>http://caishaodong.top/2016/07/24/art-mysql-remove/</url>
+      <content type="html"><![CDATA[<h2 id="移除mysql"><a href="#移除mysql" class="headerlink" title="移除mysql"></a>移除mysql</h2><ul>
+<li>yum remove mysql</li>
+</ul>
+<h2 id="移除dbbase"><a href="#移除dbbase" class="headerlink" title="移除dbbase"></a>移除dbbase</h2><ul>
+<li>rm -rf /var/lib/mysql</li>
+</ul>
+<h2 id="移除配置"><a href="#移除配置" class="headerlink" title="移除配置"></a>移除配置</h2><ul>
+<li>rm /etc/my.cnf</li>
+</ul>
+<h2 id="是否还有mysql软件"><a href="#是否还有mysql软件" class="headerlink" title="是否还有mysql软件"></a>是否还有mysql软件</h2><p>rpm -qa|grep mysql</p>
+]]></content>
+      
+        <categories>
+            
+            <category> mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人博客搭建之旅（二）]]></title>
+      <url>http://caishaodong.top/2016/07/23/art-blog-2/</url>
+      <content type="html"><![CDATA[<h1 id="使用hexo搭建github博客"><a href="#使用hexo搭建github博客" class="headerlink" title="使用hexo搭建github博客"></a>使用hexo搭建github博客</h1><h2 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h2><blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><ul>
+<li>Node.js </li>
+</ul>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><blockquote>
+<p>npm install -g hexo-cli</p>
+</blockquote>
+<h1 id="hexo-详细文档"><a href="#hexo-详细文档" class="headerlink" title="hexo 详细文档"></a>hexo 详细文档</h1><ul>
+<li><a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="noopener">doc</a></li>
+</ul>
+<h1 id="hexo-主题"><a href="#hexo-主题" class="headerlink" title="hexo 主题"></a>hexo 主题</h1><ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next/wiki/" target="_blank" rel="noopener">hexo.NEXT</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 程序员素养 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> github </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人博客搭建之旅]]></title>
+      <url>http://caishaodong.top/2016/07/21/art-blog/</url>
+      <content type="html"><![CDATA[<h1 id="个人博客搭建（一）"><a href="#个人博客搭建（一）" class="headerlink" title="个人博客搭建（一）"></a>个人博客搭建（一）</h1><h2 id="什么是GITHub-Pages？"><a href="#什么是GITHub-Pages？" class="headerlink" title="什么是GITHub Pages？"></a>什么是GITHub Pages？</h2><ul>
+<li>github pages有300M免费空间，资料自己管理，保存可靠</li>
+<li>上面有很多大牛，眼界会开阔很多，你也会成为大牛</li>
+<li>github很geek</li>
+<li>github pages 流量无线，免购买服务器，自主性高</li>
+</ul>
+<blockquote>
+<p>从国内<a href="http://my.oschina.net/orgsky/blog" target="_blank" rel="noopener">oschina</a> 转战 GITHUB</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>注册一个github 账号</li>
+<li>选择一个好用markdown工具<a href="https://www.zybuluo.com/" target="_blank" rel="noopener">CmdMarkdown</a></li>
+</ul>
+<h2 id="建立博客"><a href="#建立博客" class="headerlink" title="建立博客"></a>建立博客</h2><ul>
+<li><p>创建仓库</p>
+<blockquote>
+<p>仓库名字和账号名字一致，使用github.com 结尾</p>
+</blockquote>
+<p><img src="http://images.cnitblog.com/blog/275810/201303/07214321-2098fc71740240a7b33147881fa56d53.png" alt=""></p>
+</li>
+<li>设置主题<blockquote>
+<p>进入仓库的Settings<br><img src="http://images.cnitblog.com/blog/275810/201303/07214346-182c6e03424c4a74804530c5d61b9c72.png" alt=""><br>生成页面<br><img src="http://images.cnitblog.com/blog/275810/201303/07214412-d3e051f728a4498d8ea7841a04b48f38.png" alt=""><br>选择主题<br><img src="http://images.cnitblog.com/blog/275810/201303/07214438-a18d78f052f84d2fa2d57a93ed4e54b2.png" alt=""></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p>一个属于自己的Blog 就这么容易弄好啦！准备你的Blog之旅吧！</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 程序员素养 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
