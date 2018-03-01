@@ -82,9 +82,9 @@
         
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> swarm </tag>
+            
+            <tag> docker </tag>
             
         </tags>
         
