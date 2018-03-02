@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[springboot的rest接口返回格式]]></title>
+      <url>http://caishaodong.top/2018/03/01/art-springboot-jsonxml/</url>
+      <content type="html"><![CDATA[<p>rest的返回格式可以通过produces属性进行设置</p>
+<p>@RequestMapping</p>
+<blockquote>
+<p>consumes： 指定处理请求的提交内容类型（Content-Type），例如application/json, text/html;</p>
+<p>produces:    指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value = &quot;/&quot;, produces = arrayOf(&quot;application/xml&quot;, &quot;application/json&quot;))</span><br></pre></td></tr></table></figure>
+<p>query path以.json结尾就用json格式返回，以.xml结尾就以xml格式返回</p>
+<p>测试，在浏览器上输入 <a href="https://link.jianshu.com?t=http://localhost:8080/student.xml?id=1" target="_blank" rel="noopener">http://localhost:8080/student.xml?id=1</a> 返回结果为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Student&gt;</span><br><span class="line">	&lt;name&gt;aaa&lt;/name&gt;</span><br><span class="line">	&lt;age&gt;10&lt;/age&gt;</span><br><span class="line">	&lt;id&gt;1&lt;/id&gt;</span><br><span class="line">&lt;/Student&gt;</span><br></pre></td></tr></table></figure>
+<p>当输入<a href="https://link.jianshu.com?t=http://localhost:8080/student.json?id=1" target="_blank" rel="noopener">http://localhost:8080/student.json?id=1</a> 时返回如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;name&quot;:&quot;aaa&quot;,&quot;age&quot;:10,&quot;id&quot;:1&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+        
+        <tags>
+            
+            <tag> springboot </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用又拍云的cdn加速GitHub Pages]]></title>
       <url>http://caishaodong.top/2018/02/27/art-upyun-cdn/</url>
       <content type="html"><![CDATA[<p>在GitHubPages上搭建个人博客后,你会发现Github屏蔽百度爬虫导致在Github Pages上托管的博客、网站都无法被百度索引到。</p>
@@ -82,9 +107,9 @@
         
         <tags>
             
-            <tag> swarm </tag>
-            
             <tag> docker </tag>
+            
+            <tag> swarm </tag>
             
         </tags>
         
@@ -205,9 +230,9 @@
         
         <tags>
             
-            <tag> ecs </tag>
-            
             <tag> aliyun </tag>
+            
+            <tag> ecs </tag>
             
         </tags>
         
