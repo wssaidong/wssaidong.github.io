@@ -146,9 +146,9 @@
         
         <tags>
             
-            <tag> swarm </tag>
-            
             <tag> docker </tag>
+            
+            <tag> swarm </tag>
             
         </tags>
         
@@ -269,9 +269,9 @@
         
         <tags>
             
-            <tag> ecs </tag>
-            
             <tag> aliyun </tag>
+            
+            <tag> ecs </tag>
             
         </tags>
         
