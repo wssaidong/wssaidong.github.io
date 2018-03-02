@@ -10,6 +10,14 @@
 
 {% block content %}
   <section id="posts" class="posts-expand">
+	<div style="overflow: hidden;">
+		<script type="text/javascript">
+		var sogou_ad_id=957680;
+		var sogou_ad_height=60;
+		var sogou_ad_width=960;
+		</script>
+		<script type='text/javascript' src='http://images.sohu.com/cs/jsfile/js/c.js'></script>
+	</div>
     {% for post in page.posts %}
       {{ post_template.render(post, true) }}
     {% endfor %}
