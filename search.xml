@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title><![CDATA[如何部署一个高可用的hexo个人博客]]></title>
+      <url>http://caishaodong.top/2018/03/02/art-blog-framework/</url>
+      <content type="html"><![CDATA[<p><img src="http://ob5tof7al.bkt.clouddn.com/18-3-2/18911533.jpg" alt=""></p>
+<p>以往的博客已经介绍怎么使用hexo搭建一个个人博客了，这里就不介绍了，那么个人博客创建后，我们怎么部署这个博客可以既高可用又省钱呢！</p>
+<ul>
+<li><p>最省钱方式</p>
+<p>在图中，我们可以看紫色的路径部署方式，直接把hexo博客部署到GitHubPages上，然后配置自定义域名，这样就有一个属于自己个性化域名的博客，这是不用花费一分钱的方式。</p>
+<blockquote>
+<p>缺点</p>
+<p>由于GithubPages是拒绝百度爬虫爬取的，那么部署在GitHubPages的博客在百度上是搜索不出来的,不利于seo，也不利于提高个人知名度，只能自娱自乐。</p>
+</blockquote>
+</li>
+<li><p>最高可用方式</p>
+<p>对以上方式的缺点进行改造，我加入cdn加速，这里我<a href="http://caishaodong.top/2018/02/27/art-upyun-cdn/">使用又拍云的CDN加速</a>，配置方式在以前的博客也有涉及，加入cdn后，我们有了cdn节点进行缓存，cdn节点可以被spider抓取，又可以加快访问速度，当GithubPges奔溃后，短时间不会出异常等优点。</p>
+<blockquote>
+<p>缺点</p>
+<p>域名利用率不高，不可给博客进行多域名配置，博客扩展性不高。</p>
+</blockquote>
+</li>
+<li><p>最烧钱方式</p>
+<p>对以上方式的缺点进行改造，购买阿里云的ecs，在ecs里面配置了一个api网关(kong)，使用kong，对域名进行了分发，并且在ecs里面部署了一些自己扩展的api，提供给自身博客使用。<img src="http://ob5tof7al.bkt.clouddn.com/18-3-2/95147785.jpg" alt="img"></p>
+</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> GithubPages </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[springboot的rest接口返回格式]]></title>
       <url>http://caishaodong.top/2018/03/01/art-springboot-jsonxml/</url>
       <content type="html"><![CDATA[<p>rest的返回格式可以通过produces属性进行设置</p>

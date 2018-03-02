@@ -314,6 +314,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/03/02/art-blog-framework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叉烧">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cai.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Choi_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/02/art-blog-framework/" itemprop="url">如何部署一个高可用的hexo个人博客</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T09:46:27+08:00">
+                2018-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/03/02/art-blog-framework/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://caishaodong.top/2018/03/02/art-blog-framework/" class="cy_cmt_count" data-xid="2018/03/02/art-blog-framework/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://ob5tof7al.bkt.clouddn.com/18-3-2/18911533.jpg" alt=""></p>
+<p>以往的博客已经介绍怎么使用hexo搭建一个个人博客了，这里就不介绍了，那么个人博客创建后，我们怎么部署这个博客可以既高可用又省钱呢！</p>
+<ul>
+<li><p>最省钱方式</p>
+<p>在图中，我们可以看紫色的路径部署方式，直接把hexo博客部署到GitHubPages上，然后配置自定义域名，这样就有一个属于自己个性化域名的博客，这是不用花费一分钱的方式。</p>
+<blockquote>
+<p>缺点</p>
+<p>由于GithubPages是拒绝百度爬虫爬取的，那么部署在GitHubPages的博客在百度上是搜索不出来的,不利于seo，也不利于提高个人知名度，只能自娱自乐。</p>
+</blockquote>
+</li>
+<li><p>最高可用方式</p>
+<p>对以上方式的缺点进行改造，我加入cdn加速，这里我<a href="http://caishaodong.top/2018/02/27/art-upyun-cdn/">使用又拍云的CDN加速</a>，配置方式在以前的博客也有涉及，加入cdn后，我们有了cdn节点进行缓存，cdn节点可以被spider抓取，又可以加快访问速度，当GithubPges奔溃后，短时间不会出异常等优点。</p>
+<blockquote>
+<p>缺点</p>
+<p>域名利用率不高，不可给博客进行多域名配置，博客扩展性不高。</p>
+</blockquote>
+</li>
+<li><p>最烧钱方式</p>
+<p>对以上方式的缺点进行改造，购买阿里云的ecs，在ecs里面配置了一个api网关(kong)，使用kong，对域名进行了分发，并且在ecs里面部署了一些自己扩展的api，提供给自身博客使用。<img src="http://ob5tof7al.bkt.clouddn.com/18-3-2/95147785.jpg" alt="img"></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/03/01/art-springboot-jsonxml/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1564,137 +1715,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2017/10/23/art-ecs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叉烧">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/cai.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Choi_Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/23/art-ecs/" itemprop="url">ecs部署结构</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T16:56:20+08:00">
-                2017-10-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/10/23/art-ecs/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://caishaodong.top/2017/10/23/art-ecs/" class="cy_cmt_count" data-xid="2017/10/23/art-ecs/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="ecs基础结构"><a href="#ecs基础结构" class="headerlink" title="ecs基础结构"></a>ecs基础结构</h3><p><img src="http://ob5tof7al.bkt.clouddn.com/17-10-23/21074412.jpg" alt="ecs"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1751,7 +1771,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1773,7 +1793,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
