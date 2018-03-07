@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[kong(Gateway)部署docker]]></title>
+      <url>http://caishaodong.top/2018/03/07/art-kong/</url>
+      <content type="html"><![CDATA[<p><a href="https://docs.docker.com/samples/library/kong/#1-link-kong-to-either-a-cassandra-or-postgresql-container" target="_blank" rel="noopener">kong</a> docker 文档</p>
+<p>在阿里云的容器服务下安装kong</p>
+<p><img src="http://ob5tof7al.bkt.clouddn.com/18-3-7/95955707.jpg" alt=""></p>
+<h3 id="kong-db-安装"><a href="#kong-db-安装" class="headerlink" title="kong-db 安装"></a>kong-db 安装</h3><pre><code>version: &apos;1.0&apos;
+services:
+  kong-database:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_USER=kong
+      - POSTGRES_DB=kong
+</code></pre><h3 id="Prepare-kong-db"><a href="#Prepare-kong-db" class="headerlink" title="Prepare kong-db"></a>Prepare kong-db</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm \</span><br><span class="line">    -e &quot;KONG_DATABASE=postgres&quot; \</span><br><span class="line">    -e &quot;KONG_PG_HOST=&#123;IP&#125;&quot; \</span><br><span class="line">    -e &quot;KONG_CASSANDRA_CONTACT_POINTS=kong-database&quot; \</span><br><span class="line">    kong kong migrations up</span><br></pre></td></tr></table></figure>
+<h3 id="kong-安装"><a href="#kong-安装" class="headerlink" title="kong 安装"></a>kong 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">kong:</span><br><span class="line">  	restart: always</span><br><span class="line">  	ports:</span><br><span class="line">		-&apos;xxx:xxx/tcp&apos;</span><br><span class="line">		-&apos;xxx:xxx/tcp&apos;</span><br><span class="line">  	environment:</span><br><span class="line">		-KONG_PG_HOST=&#123;IP&#125;</span><br><span class="line">		-KONG_PG_DATABASE=kong</span><br><span class="line">		-KONG_ADMIN_LISTEN=&apos;0.0.0.0:xxx&apos;</span><br><span class="line">		-KONG_ADMIN_LISTEN_SSL=&apos;0.0.0.0:xxx&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="kong-admin-安装"><a href="#kong-admin-安装" class="headerlink" title="kong-admin 安装"></a>kong-admin 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kong-admin:</span><br><span class="line">  restart: always</span><br><span class="line">  ports:</span><br><span class="line">    - &apos;xxx:xxx/tcp&apos;</span><br><span class="line">  image: &apos;pantsel/konga:latest&apos;</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> kong </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何部署一个高可用的hexo个人博客]]></title>
       <url>http://caishaodong.top/2018/03/02/art-blog-framework/</url>
       <content type="html"><![CDATA[<p><img src="http://ob5tof7al.bkt.clouddn.com/18-3-2/18911533.jpg" alt=""></p>
