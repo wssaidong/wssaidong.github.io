@@ -4,7 +4,7 @@
 
 # Site
 title: Choi_Blog
-subtitle: 叉烧博客
+subtitle: 叉烧
 description: caishaodong.top
 author: 叉烧
 language: zh-Hans
@@ -78,7 +78,7 @@ baidu_url_submit:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-- type: baidu_url_submitter
+# type: baidu_url_submitter
 - type: git
   repo: https://github.com/wssaidong/wssaidong.github.io.git
   branch: master
