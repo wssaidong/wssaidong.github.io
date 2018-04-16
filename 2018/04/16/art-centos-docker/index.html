@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="caishaodong.top,叉烧,少东" />
+  <meta name="keywords" content="docker-ce,centos7," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="caishaodong.top">
+<meta name="description" content="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源 sudo yum install -y yum-utils  添加yum源 sudo yum-config-manager –add-repo https://download.docker.com/linux/centos/docker-ce.repo  更新索引 sudo yum makecache">
+<meta name="keywords" content="docker-ce,centos7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="art-centos-docker">
+<meta property="og:title" content="在 Cent OS 7 上安装 docker-ce">
 <meta property="og:url" content="http://caishaodong.top/2018/04/16/art-centos-docker/index.html">
 <meta property="og:site_name" content="Choi_Blog">
-<meta property="og:description" content="caishaodong.top">
+<meta property="og:description" content="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源 sudo yum install -y yum-utils  添加yum源 sudo yum-config-manager –add-repo https://download.docker.com/linux/centos/docker-ce.repo  更新索引 sudo yum makecache">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-04-16T02:54:38.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="art-centos-docker">
-<meta name="twitter:description" content="caishaodong.top">
+<meta name="twitter:title" content="在 Cent OS 7 上安装 docker-ce">
+<meta name="twitter:description" content="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源 sudo yum install -y yum-utils  添加yum源 sudo yum-config-manager –add-repo https://download.docker.com/linux/centos/docker-ce.repo  更新索引 sudo yum makecache">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title>art-centos-docker | Choi_Blog</title>
+  <title>在 Cent OS 7 上安装 docker-ce | Choi_Blog</title>
   
 
 
@@ -316,7 +317,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">art-centos-docker</h2>
+          <h2 class="post-title" itemprop="name headline">在 Cent OS 7 上安装 docker-ce</h2>
         
 
         <div class="post-meta">
@@ -382,7 +383,25 @@
       
 
       
-        
+        <h3 id="安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源"><a href="#安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源" class="headerlink" title="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源"></a>安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源</h3><blockquote>
+<p>sudo yum install -y yum-utils</p>
+</blockquote>
+<h3 id="添加yum源"><a href="#添加yum源" class="headerlink" title="添加yum源"></a>添加yum源</h3><blockquote>
+<p>sudo yum-config-manager –add-repo <a href="https://download.docker.com/linux/centos/docker-ce.repo" target="_blank" rel="noopener">https://download.docker.com/linux/centos/docker-ce.repo</a></p>
+</blockquote>
+<h3 id="更新索引"><a href="#更新索引" class="headerlink" title="更新索引"></a>更新索引</h3><blockquote>
+<p>sudo yum makecache fast</p>
+</blockquote>
+<h3 id="安装-docker-ce"><a href="#安装-docker-ce" class="headerlink" title="安装 docker-ce"></a>安装 docker-ce</h3><blockquote>
+<p>sudo yum install docker-ce</p>
+</blockquote>
+<h3 id="启动-docker"><a href="#启动-docker" class="headerlink" title="启动 docker"></a>启动 docker</h3><blockquote>
+<p>sudo systemctl start docker</p>
+</blockquote>
+<h3 id="验证是否安装成功"><a href="#验证是否安装成功" class="headerlink" title="验证是否安装成功"></a>验证是否安装成功</h3><blockquote>
+<p>sudo docker info</p>
+</blockquote>
+
       
     </div>
     
@@ -421,6 +440,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/docker-ce/" rel="tag"># docker-ce</a>
+          
+            <a href="/tags/centos7/" rel="tag"># centos7</a>
+          
+        </div>
+      
 
       
       
@@ -430,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/08/vdo-20180308/" rel="next" title="vdo-20180308">
-                <i class="fa fa-chevron-left"></i> vdo-20180308
+              <a href="/2018/03/07/art-kong/" rel="next" title="kong(Gateway)部署docker">
+                <i class="fa fa-chevron-left"></i> kong(Gateway)部署docker
               </a>
             
           </div>
@@ -535,8 +562,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -555,7 +591,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -577,7 +613,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -632,6 +668,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源"><span class="nav-number">1.</span> <span class="nav-text">安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加yum源"><span class="nav-number">2.</span> <span class="nav-text">添加yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新索引"><span class="nav-number">3.</span> <span class="nav-text">更新索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-docker-ce"><span class="nav-number">4.</span> <span class="nav-text">安装 docker-ce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-docker"><span class="nav-number">5.</span> <span class="nav-text">启动 docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证是否安装成功"><span class="nav-number">6.</span> <span class="nav-text">验证是否安装成功</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

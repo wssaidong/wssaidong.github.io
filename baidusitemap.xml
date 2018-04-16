@@ -8,24 +8,13 @@
     <lastmod>2018-04-16T02:54:38.662Z</lastmod>
     <data>
         <display>
-        <title>art-centos-docker</title>
+        <title>在 Cent OS 7 上安装 docker-ce</title>
         <pubTime>2018-04-16T02:54:38.000Z</pubTime>
         
+        <tag>docker-ce</tag>
          
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2018/03/08/vdo-20180308/</loc>
-    <lastmod>2018-03-08T08:46:14.226Z</lastmod>
-    <data>
-        <display>
-        <title>vdo-20180308</title>
-        <pubTime>2018-03-08T08:12:58.000Z</pubTime>
-        
+        <tag>centos7</tag>
+         
          
            
         </display>
@@ -253,9 +242,9 @@
         <title>玩转ecs</title>
         <pubTime>2017-11-27T07:07:50.000Z</pubTime>
         
-        <tag>ecs</tag>
-         
         <tag>aliyun</tag>
+         
+        <tag>ecs</tag>
          
          
            
@@ -274,163 +263,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2016/07/24/art-mysql-remove/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>linux 删除mysql</title>
-        <pubTime>2016-07-24T14:05:32.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-         
-           
-             
-              <breadCrumb title="mysql" url="http://caishaodong.top/categories/mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2016/08/07/ds-system-uml-v1/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>系统架构uml</title>
-        <pubTime>2016-08-07T14:04:05.000Z</pubTime>
-        
-        <tag>uml</tag>
-         
-         
-           
-             
-              <breadCrumb title="系统架构" url="http://caishaodong.top/categories/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2016/07/31/art-tuchuang/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>图床工具</title>
-        <pubTime>2016-07-31T03:22:53.000Z</pubTime>
-        
-        <tag>markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="程序员素养" url="http://caishaodong.top/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%B4%A0%E5%85%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2016/08/01/art-qiniu/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>七牛CDN加速github pages</title>
-        <pubTime>2016-08-01T14:13:36.000Z</pubTime>
-        
-        <tag>github</tag>
-         
-        <tag>qiniu</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2017/10/23/art-ecs/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>ecs部署结构</title>
-        <pubTime>2017-10-23T08:56:20.000Z</pubTime>
-        
-        <tag>ecs</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2016/08/28/art-logstash/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>统一日志收集</title>
-        <pubTime>2016-08-28T09:29:00.000Z</pubTime>
-        
-        <tag>日志收集</tag>
-         
-        <tag>log</tag>
-         
-        <tag>elk</tag>
-         
-         
-           
-             
-              <breadCrumb title="架构" url="http://caishaodong.top/categories/%E6%9E%B6%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2017/10/20/rcm-git/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>alibaba/p3c</title>
-        <pubTime>2017-10-20T02:00:15.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2016/08/13/art-gradle%E4%B8%8A%E4%BC%A0jar/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>gradle构建jar包上传maven私服</title>
-        <pubTime>2016-08-13T12:46:00.000Z</pubTime>
-        
-        <tag>gradle</tag>
-         
-        <tag>jenkins</tag>
-         
-         
-           
-             
-              <breadCrumb title="持续集成" url="http://caishaodong.top/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
-          
         </display>
     </data>
     </url>
@@ -461,6 +293,163 @@
 
     
   <url>
+    <loc>http://caishaodong.top/2016/07/24/art-mysql-remove/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>linux 删除mysql</title>
+        <pubTime>2016-07-24T14:05:32.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://caishaodong.top/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2017/10/23/art-ecs/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>ecs部署结构</title>
+        <pubTime>2017-10-23T08:56:20.000Z</pubTime>
+        
+        <tag>ecs</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2016/08/01/art-qiniu/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>七牛CDN加速github pages</title>
+        <pubTime>2016-08-01T14:13:36.000Z</pubTime>
+        
+        <tag>github</tag>
+         
+        <tag>qiniu</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2016/07/31/art-tuchuang/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>图床工具</title>
+        <pubTime>2016-07-31T03:22:53.000Z</pubTime>
+        
+        <tag>markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="程序员素养" url="http://caishaodong.top/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%B4%A0%E5%85%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2016/08/13/art-gradle%E4%B8%8A%E4%BC%A0jar/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>gradle构建jar包上传maven私服</title>
+        <pubTime>2016-08-13T12:46:00.000Z</pubTime>
+        
+        <tag>gradle</tag>
+         
+        <tag>jenkins</tag>
+         
+         
+           
+             
+              <breadCrumb title="持续集成" url="http://caishaodong.top/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2016/08/28/art-logstash/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>统一日志收集</title>
+        <pubTime>2016-08-28T09:29:00.000Z</pubTime>
+        
+        <tag>日志收集</tag>
+         
+        <tag>log</tag>
+         
+        <tag>elk</tag>
+         
+         
+           
+             
+              <breadCrumb title="架构" url="http://caishaodong.top/categories/%E6%9E%B6%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2016/08/07/ds-system-uml-v1/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>系统架构uml</title>
+        <pubTime>2016-08-07T14:04:05.000Z</pubTime>
+        
+        <tag>uml</tag>
+         
+         
+           
+             
+              <breadCrumb title="系统架构" url="http://caishaodong.top/categories/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2017/10/20/rcm-git/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>alibaba/p3c</title>
+        <pubTime>2017-10-20T02:00:15.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://caishaodong.top/2016/08/13/s-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2017-11-26T13:35:37.851Z</lastmod>
     <data>
@@ -474,26 +463,6 @@
            
              
               <breadCrumb title="PPT" url="http://caishaodong.top/categories/PPT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://caishaodong.top/2016/08/11/s-%E6%B7%B7%E5%90%88%E4%BA%91/</loc>
-    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
-    <data>
-        <display>
-        <title>混合云</title>
-        <pubTime>2016-08-11T08:53:25.000Z</pubTime>
-        
-        <tag>混合云</tag>
-         
-         
-           
-             
-              <breadCrumb title="系统架构" url="http://caishaodong.top/categories/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
           
         </display>
     </data>
@@ -520,6 +489,26 @@
            
              
               <breadCrumb title="设计" url="http://caishaodong.top/categories/%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://caishaodong.top/2016/08/11/s-%E6%B7%B7%E5%90%88%E4%BA%91/</loc>
+    <lastmod>2017-11-26T13:35:37.851Z</lastmod>
+    <data>
+        <display>
+        <title>混合云</title>
+        <pubTime>2016-08-11T08:53:25.000Z</pubTime>
+        
+        <tag>混合云</tag>
+         
+         
+           
+             
+              <breadCrumb title="系统架构" url="http://caishaodong.top/categories/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
           
         </display>
     </data>
