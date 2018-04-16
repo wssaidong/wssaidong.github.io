@@ -4,6 +4,22 @@
   
     
     <entry>
+      <title><![CDATA[art-centos-docker]]></title>
+      <url>http://caishaodong.top/2018/04/16/art-centos-docker/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[vdo-20180308]]></title>
+      <url>http://caishaodong.top/2018/03/08/vdo-20180308/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[kong(Gateway)部署docker]]></title>
       <url>http://caishaodong.top/2018/03/07/art-kong/</url>
       <content type="html"><![CDATA[<p><a href="https://docs.docker.com/samples/library/kong/#1-link-kong-to-either-a-cassandra-or-postgresql-container" target="_blank" rel="noopener">kong</a> docker 文档</p>
@@ -298,9 +314,9 @@ services:
         
         <tags>
             
-            <tag> aliyun </tag>
-            
             <tag> ecs </tag>
+            
+            <tag> aliyun </tag>
             
         </tags>
         
