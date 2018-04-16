@@ -4,6 +4,30 @@
   
     
     <entry>
+      <title><![CDATA[安装docker-swarm和portainer]]></title>
+      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>swarm init</li>
+<li>docker pull portainer/portainer</li>
+<li>docker volume create portainer_data</li>
+<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker-swarm </tag>
+            
+            <tag> portainer </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在 Cent OS 7 上安装 docker-ce]]></title>
       <url>http://caishaodong.top/2018/04/16/art-centos-docker/</url>
       <content type="html"><![CDATA[<h3 id="安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源"><a href="#安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源" class="headerlink" title="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源"></a>安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源</h3><blockquote>
@@ -332,9 +356,9 @@ services:
         
         <tags>
             
-            <tag> aliyun </tag>
-            
             <tag> ecs </tag>
+            
+            <tag> aliyun </tag>
             
         </tags>
         
