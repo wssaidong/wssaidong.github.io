@@ -4,6 +4,55 @@
   
     
     <entry>
+      <title><![CDATA[使用docker部署html页面]]></title>
+      <url>http://caishaodong.top/2018/04/18/art-docker-html/</url>
+      <content type="html"><![CDATA[<p>使用Dockerfile构建一个可以运行html的容器</p>
+<p>Dockerfile 内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM nginx:latest</span><br><span class="line">run rm -rf /usr/share/nginx/html</span><br><span class="line">copy /html /usr/share/html</span><br><span class="line">copy cfg /etc/nginx/conf.d</span><br><span class="line">CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]</span><br></pre></td></tr></table></figure>
+<p>目录结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\</span><br><span class="line">--html</span><br><span class="line">--cfg</span><br><span class="line">Dockerfile</span><br></pre></td></tr></table></figure>
+<p>/html 为html页面目录</p>
+<p>cfg 为nginx配置文件路径</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> nginx </tag>
+            
+            <tag> html </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[安装docker-swarm和portainer]]></title>
+      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>swarm init</li>
+<li>docker pull portainer/portainer</li>
+<li>docker volume create portainer_data</li>
+<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker-swarm </tag>
+            
+            <tag> portainer </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在 Cent OS 7 上安装 docker-ce]]></title>
       <url>http://caishaodong.top/2018/04/16/art-centos-docker/</url>
       <content type="html"><![CDATA[<h3 id="安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源"><a href="#安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源" class="headerlink" title="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源"></a>安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源</h3><blockquote>
@@ -32,30 +81,6 @@
             <tag> docker-ce </tag>
             
             <tag> centos7 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[安装docker-swarm和portainer]]></title>
-      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
-      <content type="html"><![CDATA[<blockquote>
-<ul>
-<li>swarm init</li>
-<li>docker pull portainer/portainer</li>
-<li>docker volume create portainer_data</li>
-<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
-</ul>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> docker-swarm </tag>
-            
-            <tag> portainer </tag>
             
         </tags>
         
@@ -258,9 +283,9 @@ services:
         
         <tags>
             
-            <tag> aliyun </tag>
-            
             <tag> docker </tag>
+            
+            <tag> aliyun </tag>
             
         </tags>
         
