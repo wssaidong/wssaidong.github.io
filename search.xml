@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title><![CDATA[spring-security自定义登录页]]></title>
+      <url>http://caishaodong.top/2018/10/12/art-spring-security/</url>
+      <content type="html"><![CDATA[<h3 id="添加login-ftl"><a href="#添加login-ftl" class="headerlink" title="添加login.ftl"></a>添加login.ftl</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">    &lt;title&gt;微服务统一认证&lt;/title&gt;</span><br><span class="line">    &lt;link href=&quot;/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;link href=&quot;/css/signin.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container form-margin-top&quot;&gt;</span><br><span class="line">      &lt;form class=&quot;form-signin&quot; action=&quot;/authentication/form&quot; method=&quot;post&quot;&gt;</span><br><span class="line">        &lt;h2 class=&quot;form-signin-heading&quot; align=&quot;center&quot;&gt;统一认证系统&lt;/h2&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;username&quot; class=&quot;form-control form-margin-top&quot; placeholder=&quot;账号&quot; required autofocus&gt;</span><br><span class="line">        &lt;input type=&quot;password&quot; name=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;密码&quot; required&gt;</span><br><span class="line">        &lt;button class=&quot;btn btn-lg btn-primary btn-block&quot; type=&quot;submit&quot;&gt;sign in&lt;/button&gt;</span><br><span class="line">      &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用注解的方式进行配置"><a href="#使用注解的方式进行配置" class="headerlink" title="使用注解的方式进行配置"></a>使用注解的方式进行配置</h3><p>创建SecurityConfigurerAdapter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableWebSecurity</span><br><span class="line">public class SecurityConfigurerAdapter extends WebSecurityConfigurerAdapter &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void configure(HttpSecurity http) throws Exception &#123;</span><br><span class="line">    	ExpressionUrlAuthorizationConfigurer&lt;HttpSecurity&gt;.ExpressionInterceptUrlRegistry registry =</span><br><span class="line">                http.formLogin()</span><br><span class="line">                        .loginPage(&quot;/authentication/require&quot;)</span><br><span class="line">                        .loginProcessingUrl(&quot;/authentication/form&quot;)</span><br><span class="line">                        .and()</span><br><span class="line">                        .authorizeRequests();</span><br><span class="line">        registry.anyRequest().authenticated()</span><br><span class="line">                .and()</span><br><span class="line">                .csrf().disable();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>login-page指定的用户自定义的登录页面</p>
+<p>default-target-url登录成功以后默认跳转到的页面</p>
+<p>authentication-failure-url登录失败以后跳转到的页面</p>
+<p>username-parameter指定登录表单中用户名的input中name，如果这里不配置，则默认为username</p>
+<p>password-parameter指定登录表单中密码的input中name，如果这里不配置，则默认为password</p>
+<p>logout-success-url成功退出以后跳转到的地址</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> spring-security </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用docker部署html页面]]></title>
       <url>http://caishaodong.top/2018/04/18/art-docker-html/</url>
       <content type="html"><![CDATA[<p>使用Dockerfile构建一个可以运行html的容器</p>
@@ -23,30 +46,6 @@
             <tag> nginx </tag>
             
             <tag> html </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[安装docker-swarm和portainer]]></title>
-      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
-      <content type="html"><![CDATA[<blockquote>
-<ul>
-<li>swarm init</li>
-<li>docker pull portainer/portainer</li>
-<li>docker volume create portainer_data</li>
-<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
-</ul>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> docker-swarm </tag>
-            
-            <tag> portainer </tag>
             
         </tags>
         
@@ -81,6 +80,30 @@
             <tag> docker-ce </tag>
             
             <tag> centos7 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[安装docker-swarm和portainer]]></title>
+      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>swarm init</li>
+<li>docker pull portainer/portainer</li>
+<li>docker volume create portainer_data</li>
+<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker-swarm </tag>
+            
+            <tag> portainer </tag>
             
         </tags>
         
