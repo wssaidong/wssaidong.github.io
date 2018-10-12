@@ -404,9 +404,9 @@ services:
         
         <tags>
             
-            <tag> ecs </tag>
-            
             <tag> aliyun </tag>
+            
+            <tag> ecs </tag>
             
         </tags>
         
