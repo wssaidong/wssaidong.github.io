@@ -4,10 +4,39 @@
   
     
     <entry>
-      <title><![CDATA[art-git-commit-msg]]></title>
+      <title><![CDATA[Commit Message的规范]]></title>
       <url>http://caishaodong.top/2018/10/15/art-git-commit-msg/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h3 id="Commit规范"><a href="#Commit规范" class="headerlink" title="Commit规范"></a>Commit规范</h3><h4 id="Commit-Message-格式"><a href="#Commit-Message-格式" class="headerlink" title="Commit Message 格式"></a>Commit Message 格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h5><ul>
+<li>feat：新功能（feature）</li>
+<li>fix：修补bug</li>
+<li>docs：文档（documentation）</li>
+<li>style： 格式（不影响代码运行的变动）</li>
+<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+<h5 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h5><p>用来说明本次Commit影响的范围，即简要说明修改会涉及的部分。</p>
+<h5 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h5><p>用来简要描述本次改动，概述就好了，因为后面还会在Body里给出具体信息。并且最好遵循下面三条:</p>
+<ul>
+<li>以动词开头，使用第一人称现在时，比如change，而不是changed或changes</li>
+<li>首字母不要大写</li>
+<li>结尾不用句号(.)</li>
+</ul>
+<h5 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h5><p><body>里的内容是对上面subject里内容的展开，在此做更加详尽的描述，内容里应该包含修改动机和修改前后的对比。</body></p>
+<h5 id="Footer"><a href="#Footer" class="headerlink" title="Footer"></a>Footer</h5><p>footer里的主要放置<strong>不兼容变更</strong>和<strong>Issue关闭</strong>的信息。</p>
+]]></content>
       
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> commit </tag>
+            
+            <tag> msg </tag>
+            
+        </tags>
         
     </entry>
     
@@ -60,6 +89,30 @@
     </entry>
     
     <entry>
+      <title><![CDATA[安装docker-swarm和portainer]]></title>
+      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>swarm init</li>
+<li>docker pull portainer/portainer</li>
+<li>docker volume create portainer_data</li>
+<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker-swarm </tag>
+            
+            <tag> portainer </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在 Cent OS 7 上安装 docker-ce]]></title>
       <url>http://caishaodong.top/2018/04/16/art-centos-docker/</url>
       <content type="html"><![CDATA[<h3 id="安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源"><a href="#安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源" class="headerlink" title="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源"></a>安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源</h3><blockquote>
@@ -88,30 +141,6 @@
             <tag> docker-ce </tag>
             
             <tag> centos7 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[安装docker-swarm和portainer]]></title>
-      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
-      <content type="html"><![CDATA[<blockquote>
-<ul>
-<li>swarm init</li>
-<li>docker pull portainer/portainer</li>
-<li>docker volume create portainer_data</li>
-<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
-</ul>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> docker-swarm </tag>
-            
-            <tag> portainer </tag>
             
         </tags>
         
@@ -175,11 +204,11 @@ services:
         
         <tags>
             
+            <tag> blog </tag>
+            
             <tag> hexo </tag>
             
             <tag> GithubPages </tag>
-            
-            <tag> blog </tag>
             
         </tags>
         
@@ -830,11 +859,11 @@ services:
         
         <tags>
             
-            <tag> hexo </tag>
-            
             <tag> blog </tag>
             
             <tag> github </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
         

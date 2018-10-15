@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="caishaodong.top,叉烧,少东" />
+  <meta name="keywords" content="git,commit,msg," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="caishaodong.top">
+<meta name="description" content="Commit规范Commit Message 格式12345&amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt;&amp;lt;空行&amp;gt;&amp;lt;body&amp;gt;&amp;lt;空行&amp;gt;&amp;lt;footer&amp;gt; Type feat：新功能（feature） fix：修补bug docs：文档（documentation） style： 格式（不影响代码运行的变动） r">
+<meta name="keywords" content="git,commit,msg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="art-git-commit-msg">
+<meta property="og:title" content="Commit Message的规范">
 <meta property="og:url" content="http://caishaodong.top/2018/10/15/art-git-commit-msg/index.html">
 <meta property="og:site_name" content="Choi_Blog">
-<meta property="og:description" content="caishaodong.top">
+<meta property="og:description" content="Commit规范Commit Message 格式12345&amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt;&amp;lt;空行&amp;gt;&amp;lt;body&amp;gt;&amp;lt;空行&amp;gt;&amp;lt;footer&amp;gt; Type feat：新功能（feature） fix：修补bug docs：文档（documentation） style： 格式（不影响代码运行的变动） r">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-15T08:12:17.727Z">
+<meta property="og:updated_time" content="2018-10-15T08:17:40.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="art-git-commit-msg">
-<meta name="twitter:description" content="caishaodong.top">
+<meta name="twitter:title" content="Commit Message的规范">
+<meta name="twitter:description" content="Commit规范Commit Message 格式12345&amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt;&amp;lt;空行&amp;gt;&amp;lt;body&amp;gt;&amp;lt;空行&amp;gt;&amp;lt;footer&amp;gt; Type feat：新功能（feature） fix：修补bug docs：文档（documentation） style： 格式（不影响代码运行的变动） r">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title>art-git-commit-msg | Choi_Blog</title>
+  <title>Commit Message的规范 | Choi_Blog</title>
   
 
 
@@ -326,7 +327,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">art-git-commit-msg</h2>
+          <h2 class="post-title" itemprop="name headline">Commit Message的规范</h2>
         
 
         <div class="post-meta">
@@ -392,7 +393,26 @@
       
 
       
-        
+        <h3 id="Commit规范"><a href="#Commit规范" class="headerlink" title="Commit规范"></a>Commit规范</h3><h4 id="Commit-Message-格式"><a href="#Commit-Message-格式" class="headerlink" title="Commit Message 格式"></a>Commit Message 格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h5><ul>
+<li>feat：新功能（feature）</li>
+<li>fix：修补bug</li>
+<li>docs：文档（documentation）</li>
+<li>style： 格式（不影响代码运行的变动）</li>
+<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+<h5 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h5><p>用来说明本次Commit影响的范围，即简要说明修改会涉及的部分。</p>
+<h5 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h5><p>用来简要描述本次改动，概述就好了，因为后面还会在Body里给出具体信息。并且最好遵循下面三条:</p>
+<ul>
+<li>以动词开头，使用第一人称现在时，比如change，而不是changed或changes</li>
+<li>首字母不要大写</li>
+<li>结尾不用句号(.)</li>
+</ul>
+<h5 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h5><p><body>里的内容是对上面subject里内容的展开，在此做更加详尽的描述，内容里应该包含修改动机和修改前后的对比。</body></p>
+<h5 id="Footer"><a href="#Footer" class="headerlink" title="Footer"></a>Footer</h5><p>footer里的主要放置<strong>不兼容变更</strong>和<strong>Issue关闭</strong>的信息。</p>
+
       
     </div>
     
@@ -430,6 +450,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+            <a href="/tags/commit/" rel="tag"># commit</a>
+          
+            <a href="/tags/msg/" rel="tag"># msg</a>
+          
+        </div>
       
 
       
@@ -545,8 +575,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -587,7 +626,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -642,6 +681,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit规范"><span class="nav-number">1.</span> <span class="nav-text">Commit规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Commit-Message-格式"><span class="nav-number">1.1.</span> <span class="nav-text">Commit Message 格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Type"><span class="nav-number">1.1.1.</span> <span class="nav-text">Type</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scope"><span class="nav-number">1.1.2.</span> <span class="nav-text">Scope</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subject"><span class="nav-number">1.1.3.</span> <span class="nav-text">Subject</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Body"><span class="nav-number">1.1.4.</span> <span class="nav-text">Body</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Footer"><span class="nav-number">1.1.5.</span> <span class="nav-text">Footer</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
