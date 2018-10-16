@@ -441,9 +441,9 @@ services:
         
         <tags>
             
-            <tag> aliyun </tag>
-            
             <tag> ecs </tag>
+            
+            <tag> aliyun </tag>
             
         </tags>
         
