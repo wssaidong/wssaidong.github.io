@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[Spring Cloud Security OAuth2]]></title>
+      <url>http://caishaodong.top/2018/10/18/art-spring-security-config/</url>
+      <content type="html"><![CDATA[<p>使用Spring Security OAuth2来搭建授权服务，我们必须分配 <code>client_id</code>, <code>client_secret</code>才行。Spring Security OAuth2的配置方法是编写<code>@Configuration</code>类继承<code>AuthorizationServerConfigurerAdapter</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@Order(Integer.MIN_VALUE)</span><br><span class="line">@EnableAuthorizationServer</span><br><span class="line">public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter &#123;</span><br><span class="line">	@Override</span><br><span class="line">    public void configure(ClientDetailsServiceConfigurer clients) throws Exception &#123;</span><br><span class="line">        clients.inMemory() // 使用in-memory存储</span><br><span class="line">                .withClient(&quot;client&quot;) // client_id</span><br><span class="line">                .secret(&quot;secret&quot;) // client_secret</span><br><span class="line">                .authorizedGrantTypes(&quot;authorization_code&quot;) // 该client允许的授权类型</span><br><span class="line">                .scopes(&quot;app&quot;) // 允许的授权范围</span><br><span class="line">                .autoApprove(true);//是否自动授权</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果autoApprove(false)，填写密码后跳转</p>
+<p><img src="" alt="https://img-blog.csdn.net/20160914172241289"></p>
+<p>如果autoApprove(true)，填写密码后重定向，并且带上code</p>
+<p><img src="" alt="https://img-blog.csdn.net/20160914172412190"></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> spring-security </tag>
+            
+            <tag> spring </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Commit Message的规范]]></title>
       <url>http://caishaodong.top/2018/10/15/art-git-commit-msg/</url>
       <content type="html"><![CDATA[<h3 id="Commit规范"><a href="#Commit规范" class="headerlink" title="Commit规范"></a>Commit规范</h3><h4 id="Commit-Message-格式"><a href="#Commit-Message-格式" class="headerlink" title="Commit Message 格式"></a>Commit Message 格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
@@ -89,30 +111,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[安装docker-swarm和portainer]]></title>
-      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
-      <content type="html"><![CDATA[<blockquote>
-<ul>
-<li>swarm init</li>
-<li>docker pull portainer/portainer</li>
-<li>docker volume create portainer_data</li>
-<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
-</ul>
-</blockquote>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> docker-swarm </tag>
-            
-            <tag> portainer </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[在 Cent OS 7 上安装 docker-ce]]></title>
       <url>http://caishaodong.top/2018/04/16/art-centos-docker/</url>
       <content type="html"><![CDATA[<h3 id="安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源"><a href="#安装-yum-utils，它提供了-yum-config-manager，可用来管理yum源" class="headerlink" title="安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源"></a>安装 yum-utils，它提供了 yum-config-manager，可用来管理yum源</h3><blockquote>
@@ -141,6 +139,30 @@
             <tag> docker-ce </tag>
             
             <tag> centos7 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[安装docker-swarm和portainer]]></title>
+      <url>http://caishaodong.top/2018/04/16/art-centos-docker-swarm/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>swarm init</li>
+<li>docker pull portainer/portainer</li>
+<li>docker volume create portainer_data</li>
+<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
+</ul>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> docker-swarm </tag>
+            
+            <tag> portainer </tag>
             
         </tags>
         
@@ -441,9 +463,9 @@ services:
         
         <tags>
             
-            <tag> ecs </tag>
-            
             <tag> aliyun </tag>
+            
+            <tag> ecs </tag>
             
         </tags>
         
