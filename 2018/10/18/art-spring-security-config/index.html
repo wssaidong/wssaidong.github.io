@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="spring-security,spring," />
+  <meta name="keywords" content="spring,spring-security," />
 
 
 
@@ -80,17 +80,20 @@
 
 
 <meta name="description" content="使用Spring Security OAuth2来搭建授权服务，我们必须分配 client_id, client_secret才行。Spring Security OAuth2的配置方法是编写@Configuration类继承AuthorizationServerConfigurerAdapter 1234567891011121314@Configuration@Order(Integer.MI">
-<meta name="keywords" content="spring-security,spring">
+<meta name="keywords" content="spring,spring-security">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Cloud Security OAuth2">
 <meta property="og:url" content="http://caishaodong.top/2018/10/18/art-spring-security-config/index.html">
 <meta property="og:site_name" content="Choi_Blog">
 <meta property="og:description" content="使用Spring Security OAuth2来搭建授权服务，我们必须分配 client_id, client_secret才行。Spring Security OAuth2的配置方法是编写@Configuration类继承AuthorizationServerConfigurerAdapter 1234567891011121314@Configuration@Order(Integer.MI">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://caishaodong.top/2018/10/18/art-spring-security-config/2018/10/18/art-spring-security-config/index.html">
+<meta property="og:image" content="https://img-blog.csdn.net/20160914172412190">
 <meta property="og:updated_time" content="2018-10-18T07:22:38.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud Security OAuth2">
 <meta name="twitter:description" content="使用Spring Security OAuth2来搭建授权服务，我们必须分配 client_id, client_secret才行。Spring Security OAuth2的配置方法是编写@Configuration类继承AuthorizationServerConfigurerAdapter 1234567891011121314@Configuration@Order(Integer.MI">
+<meta name="twitter:image" content="http://caishaodong.top/2018/10/18/art-spring-security-config/2018/10/18/art-spring-security-config/index.html">
 
 
 
@@ -295,7 +298,13 @@
 
   <div id="posts" class="posts-expand">
     <div style="overflow: hidden;">
-	<script charset="gbk" src="http://p.tanx.com/ex?i=mm_100084372_42972420_281952187"></script>
+	  <!-- <script charset="gbk" src="http://p.tanx.com/ex?i=mm_100084372_42972420_281952187"></script> -->
+      <script type="text/javascript">
+        var sogou_ad_id=987334;
+        var sogou_ad_height=90;
+        var sogou_ad_width=960;
+      </script>
+      <script type='text/javascript' src='http://images.sohu.com/cs/jsfile/js/c.js'></script>
     </div>
     
 
@@ -396,9 +405,9 @@
         <p>使用Spring Security OAuth2来搭建授权服务，我们必须分配 <code>client_id</code>, <code>client_secret</code>才行。Spring Security OAuth2的配置方法是编写<code>@Configuration</code>类继承<code>AuthorizationServerConfigurerAdapter</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@Order(Integer.MIN_VALUE)</span><br><span class="line">@EnableAuthorizationServer</span><br><span class="line">public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter &#123;</span><br><span class="line">	@Override</span><br><span class="line">    public void configure(ClientDetailsServiceConfigurer clients) throws Exception &#123;</span><br><span class="line">        clients.inMemory() // 使用in-memory存储</span><br><span class="line">                .withClient(&quot;client&quot;) // client_id</span><br><span class="line">                .secret(&quot;secret&quot;) // client_secret</span><br><span class="line">                .authorizedGrantTypes(&quot;authorization_code&quot;) // 该client允许的授权类型</span><br><span class="line">                .scopes(&quot;app&quot;) // 允许的授权范围</span><br><span class="line">                .autoApprove(true);//是否自动授权</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果autoApprove(false)，填写密码后跳转</p>
-<p><img src="" alt="https://img-blog.csdn.net/20160914172241289"></p>
+<p><img src="2018/10/18/art-spring-security-config/index.html" alt=""></p>
 <p>如果autoApprove(true)，填写密码后重定向，并且带上code</p>
-<p><img src="" alt="https://img-blog.csdn.net/20160914172412190"></p>
+<p><img src="https://img-blog.csdn.net/20160914172412190" alt=""></p>
 
       
     </div>
@@ -440,9 +449,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/spring-security/" rel="tag"># spring-security</a>
-          
             <a href="/tags/spring/" rel="tag"># spring</a>
+          
+            <a href="/tags/spring-security/" rel="tag"># spring-security</a>
           
         </div>
       
