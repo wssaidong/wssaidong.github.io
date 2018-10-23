@@ -367,9 +367,9 @@ services:
         
         <tags>
             
-            <tag> aliyun </tag>
-            
             <tag> docker </tag>
+            
+            <tag> aliyun </tag>
             
         </tags>
         
