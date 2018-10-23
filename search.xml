@@ -19,9 +19,9 @@
         
         <tags>
             
-            <tag> spring-security </tag>
-            
             <tag> spring </tag>
+            
+            <tag> spring-security </tag>
             
         </tags>
         
@@ -367,9 +367,9 @@ services:
         
         <tags>
             
-            <tag> docker </tag>
-            
             <tag> aliyun </tag>
+            
+            <tag> docker </tag>
             
         </tags>
         
@@ -465,9 +465,9 @@ services:
         
         <tags>
             
-            <tag> ecs </tag>
-            
             <tag> aliyun </tag>
+            
+            <tag> ecs </tag>
             
         </tags>
         
