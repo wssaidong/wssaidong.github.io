@@ -324,6 +324,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/11/12/art-idea-jpa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叉烧">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cai.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Choi_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/12/art-idea-jpa/" itemprop="url">JPA自动生成实体类</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T14:21:41+08:00">
+                2018-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/11/12/art-idea-jpa/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://caishaodong.top/2018/11/12/art-idea-jpa/" class="cy_cmt_count" data-xid="2018/11/12/art-idea-jpa/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p><img src="https://upload-images.jianshu.io/upload_images/11296261-9299a396bff29b5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/621/format/webp" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11296261-95e94feed6fdeced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/451/format/webp" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11296261-f45e7d4d5dbeda89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/668/format/webp" alt=""></p>
+<h3 id="创建实体包"><a href="#创建实体包" class="headerlink" title="创建实体包"></a>创建实体包</h3><p><img src="https://upload-images.jianshu.io/upload_images/11296261-8a0d01047a32aa96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/367/format/webp" alt=""></p>
+<h3 id="创建生成实体的脚本"><a href="#创建生成实体的脚本" class="headerlink" title="创建生成实体的脚本"></a>创建生成实体的脚本</h3><p><img src="https://upload-images.jianshu.io/upload_images/11296261-247829152ed272c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/622/format/webp" alt=""></p>
+<h4 id="Generate-POJOs-groovy-生成实体脚本"><a href="#Generate-POJOs-groovy-生成实体脚本" class="headerlink" title="Generate POJOs.groovy(生成实体脚本)"></a>Generate POJOs.groovy(生成实体脚本)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">import com.intellij.database.model.DasTable</span><br><span class="line">import com.intellij.database.model.ObjectKind</span><br><span class="line">import com.intellij.database.util.Case</span><br><span class="line">import com.intellij.database.util.DasUtil</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * Available context bindings:</span><br><span class="line"> *   SELECTION   Iterable&lt;DasObject&gt;</span><br><span class="line"> *   PROJECT     project</span><br><span class="line"> *   FILES       files helper</span><br><span class="line"> */</span><br><span class="line">//修改为你的实体类的包名</span><br><span class="line">packageName = &quot;com.x.laystall.uc.domain.entity;&quot;</span><br><span class="line">typeMapping = [</span><br><span class="line">        (~/(?i)int/)                      : &quot;Long&quot;,</span><br><span class="line">        (~/(?i)float|double|decimal|real/): &quot;Double&quot;,</span><br><span class="line">        (~/(?i)bool|boolean/)             : &quot;Boolean&quot;,</span><br><span class="line">        (~/(?i)datetime|timestamp/)       : &quot;java.util.Date&quot;,</span><br><span class="line">        (~/(?i)date/)                     : &quot;java.sql.Date&quot;,</span><br><span class="line">        (~/(?i)time/)                     : &quot;java.sql.Time&quot;,</span><br><span class="line">        (~/(?i)/)                         : &quot;String&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">FILES.chooseDirectoryAndSave(&quot;Choose directory&quot;, &quot;Choose where to store generated files&quot;) &#123; dir -&gt;</span><br><span class="line">  SELECTION.filter &#123; it instanceof DasTable &amp;&amp; it.getKind() == ObjectKind.TABLE &#125;.each &#123; generate(it, dir) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def generate(table, dir) &#123;</span><br><span class="line">  def className = javaName(table.getName(), true)</span><br><span class="line">  def fields = calcFields(table)</span><br><span class="line">  new File(dir, className + &quot;.java&quot;).withPrintWriter &#123; out -&gt; generate(out, table, className, fields) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def generate(out, table, className, fields) &#123;</span><br><span class="line">  def tableName = table.getName()</span><br><span class="line">  out.println &quot;package $packageName&quot;</span><br><span class="line">  out.println &quot;&quot;</span><br><span class="line">  out.println &quot;import lombok.Data;&quot;</span><br><span class="line">  out.println &quot;import org.hibernate.annotations.GenericGenerator;&quot;</span><br><span class="line">  out.println &quot;&quot;</span><br><span class="line">  out.println &quot;import javax.persistence.*;&quot;</span><br><span class="line">  out.println &quot;import java.io.Serializable;&quot;</span><br><span class="line">  out.println &quot;&quot;</span><br><span class="line">  out.println &quot;@Data&quot;</span><br><span class="line">  out.println &quot;@Entity&quot;</span><br><span class="line">  out.println &quot;@Table(name = \&quot;$tableName\&quot;)&quot;</span><br><span class="line">  out.println &quot;public class $className  implements Serializable &#123;&quot;</span><br><span class="line">  out.println &quot;&quot;</span><br><span class="line">  // 判断自增</span><br><span class="line">  if ((tableName + &quot;_id&quot;).equalsIgnoreCase(fields[0].colum) || &quot;id&quot;.equalsIgnoreCase(fields[0].colum)) &#123;</span><br><span class="line">    out.println &quot;\t@Id&quot;</span><br><span class="line">    out.println &quot;\t@GenericGenerator(name=\&quot;idGenerator\&quot;, strategy=\&quot;uuid\&quot;)&quot;</span><br><span class="line">    out.println &quot;\t@GeneratedValue(generator=\&quot;idGenerator\&quot;)&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  fields.each() &#123;</span><br><span class="line">    if (it.annos != &quot;&quot;) out.println &quot;  $&#123;it.annos&#125;&quot;</span><br><span class="line">    if (it.colum != it.name) &#123;</span><br><span class="line">      out.println &quot;\t@Column(name = \&quot;$&#123;it.colum&#125;\&quot;)&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    out.println &quot;\tprivate $&#123;it.type&#125; $&#123;it.name&#125;;&quot;</span><br><span class="line">    out.println &quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  out.println &quot;&#125;&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def calcFields(table) &#123;</span><br><span class="line">  DasUtil.getColumns(table).reduce([]) &#123; fields, col -&gt;</span><br><span class="line">    def spec = Case.LOWER.apply(col.getDataType().getSpecification())</span><br><span class="line">    def typeStr = typeMapping.find &#123; p, t -&gt; p.matcher(spec).find() &#125;.value</span><br><span class="line">    fields += [[</span><br><span class="line">                       name : javaName(col.getName(), false),</span><br><span class="line">                       colum: col.getName(),</span><br><span class="line">                       type : typeStr,</span><br><span class="line">                       annos: &quot;&quot;]]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def javaName(str, capitalize) &#123;</span><br><span class="line">  def s = str.split(/(?&lt;=[^\p&#123;IsLetter&#125;])/).collect &#123; Case.LOWER.apply(it).capitalize() &#125;</span><br><span class="line">          .join(&quot;&quot;).replaceAll(/[^\p&#123;javaJavaIdentifierPart&#125;]/, &quot;_&quot;).replaceAll(/_/, &quot;&quot;)</span><br><span class="line">  capitalize || s.length() == 1 ? s : Case.LOWER.apply(s[0]) + s[1..-1]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Generate-Repository-groovy-生成仓库脚本"><a href="#Generate-Repository-groovy-生成仓库脚本" class="headerlink" title="Generate Repository.groovy(生成仓库脚本)"></a>Generate Repository.groovy(生成仓库脚本)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">import com.intellij.database.model.DasTable</span><br><span class="line">import com.intellij.database.model.ObjectKind</span><br><span class="line">import com.intellij.database.util.Case</span><br><span class="line">import com.intellij.database.util.DasUtil</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * Available context bindings:</span><br><span class="line"> *   SELECTION   Iterable&lt;DasObject&gt;</span><br><span class="line"> *   PROJECT     project</span><br><span class="line"> *   FILES       files helper</span><br><span class="line"> */</span><br><span class="line">//修改为你的实体类的包名</span><br><span class="line">packageName = &quot;com.x.laystall.uc.domain.repository;&quot;</span><br><span class="line">typeMapping = [</span><br><span class="line">        (~/(?i)int/)                      : &quot;Long&quot;,</span><br><span class="line">        (~/(?i)float|double|decimal|real/): &quot;Double&quot;,</span><br><span class="line">        (~/(?i)bool|boolean/)             : &quot;Boolean&quot;,</span><br><span class="line">        (~/(?i)datetime|timestamp/)       : &quot;java.util.Date&quot;,</span><br><span class="line">        (~/(?i)date/)                     : &quot;java.sql.Date&quot;,</span><br><span class="line">        (~/(?i)time/)                     : &quot;java.sql.Time&quot;,</span><br><span class="line">        (~/(?i)/)                         : &quot;String&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">FILES.chooseDirectoryAndSave(&quot;Choose directory&quot;, &quot;Choose where to store generated files&quot;) &#123; dir -&gt;</span><br><span class="line">    SELECTION.filter &#123; it instanceof DasTable &amp;&amp; it.getKind() == ObjectKind.TABLE &#125;.each &#123; generate(it, dir) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def generate(table, dir) &#123;</span><br><span class="line">    def className = javaName(table.getName(), true)</span><br><span class="line">    def rClassName = className+&apos;Repository&apos;</span><br><span class="line">    new File(dir, rClassName + &quot;.java&quot;).withPrintWriter &#123; out -&gt; generate(out, table, className) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def generate(out, table, className) &#123;</span><br><span class="line">    def rClassName = className+&apos;Repository&apos;</span><br><span class="line">    out.println &quot;package $packageName&quot;</span><br><span class="line">    out.println &quot;&quot;</span><br><span class="line">    out.println &quot;import com.x.laystall.uc.domain.entity.$className;&quot;</span><br><span class="line">    out.println &quot;import org.springframework.stereotype.Repository;&quot;</span><br><span class="line">    out.println &quot;import org.springframework.data.jpa.repository.JpaRepository;&quot;</span><br><span class="line">    out.println &quot;&quot;</span><br><span class="line">    out.println &quot;@Repository&quot;</span><br><span class="line">    out.println &quot;public interface $rClassName extends JpaRepository&lt;$className, String&gt; &#123;&quot;</span><br><span class="line">    out.println &quot;&quot;</span><br><span class="line"></span><br><span class="line">    out.println &quot;&#125;&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def javaName(str, capitalize) &#123;</span><br><span class="line">    def s = str.split(/(?&lt;=[^\p&#123;IsLetter&#125;])/).collect &#123; Case.LOWER.apply(it).capitalize() &#125;</span><br><span class="line">            .join(&quot;&quot;).replaceAll(/[^\p&#123;javaJavaIdentifierPart&#125;]/, &quot;_&quot;).replaceAll(/_/, &quot;&quot;)</span><br><span class="line">    capitalize || s.length() == 1 ? s : Case.LOWER.apply(s[0]) + s[1..-1]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择库表进行生成"><a href="#选择库表进行生成" class="headerlink" title="选择库表进行生成"></a>选择库表进行生成</h3><p><img src="https://upload-images.jianshu.io/upload_images/11296261-b139bfdab66755e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/714/format/webp" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11296261-7298e5babb26e45f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/806/format/webp" alt=""></p>
+<h3 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import lombok.Data;</span><br><span class="line"></span><br><span class="line">import javax.persistence.*;</span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">@Data</span><br><span class="line">@Entity</span><br><span class="line">@Table(name = &quot;pv&quot;)</span><br><span class="line">public class Pv  implements Serializable &#123;</span><br><span class="line"></span><br><span class="line">    @Id</span><br><span class="line">    @GeneratedValue(strategy=GenerationType.IDENTITY)</span><br><span class="line">    private Long id;</span><br><span class="line"></span><br><span class="line">    private String ip;</span><br><span class="line"></span><br><span class="line">    @Column(name = &quot;channel_type&quot;)</span><br><span class="line">    private Long channelType;</span><br><span class="line"></span><br><span class="line">    private String openid;</span><br><span class="line"></span><br><span class="line">    @Column(name = &quot;create_time&quot;)</span><br><span class="line">    private java.util.Date createTime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/10/18/art-spring-security-config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -887,144 +1027,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/04/16/art-centos-docker-swarm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叉烧">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/cai.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Choi_Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/16/art-centos-docker-swarm/" itemprop="url">安装docker-swarm和portainer</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T10:54:38+08:00">
-                2018-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/04/16/art-centos-docker-swarm/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://caishaodong.top/2018/04/16/art-centos-docker-swarm/" class="cy_cmt_count" data-xid="2018/04/16/art-centos-docker-swarm/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<ul>
-<li>swarm init</li>
-<li>docker pull portainer/portainer</li>
-<li>docker volume create portainer_data</li>
-<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
-</ul>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/04/16/art-centos-docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1124,6 +1126,144 @@
 </blockquote>
 <h3 id="验证是否安装成功"><a href="#验证是否安装成功" class="headerlink" title="验证是否安装成功"></a>验证是否安装成功</h3><blockquote>
 <p>sudo docker info</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/04/16/art-centos-docker-swarm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="叉烧">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/cai.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Choi_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/16/art-centos-docker-swarm/" itemprop="url">安装docker-swarm和portainer</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T10:54:38+08:00">
+                2018-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/04/16/art-centos-docker-swarm/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://caishaodong.top/2018/04/16/art-centos-docker-swarm/" class="cy_cmt_count" data-xid="2018/04/16/art-centos-docker-swarm/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<ul>
+<li>swarm init</li>
+<li>docker pull portainer/portainer</li>
+<li>docker volume create portainer_data</li>
+<li>docker service create     –name portainer     –publish 9000:9000     –constraint ‘node.role == manager’     –mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock     portainer/portainer     -H unix:///var/run/docker.sock</li>
+</ul>
 </blockquote>
 
           
@@ -1595,154 +1735,6 @@ services:
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://caishaodong.top/2018/02/27/art-upyun-cdn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="叉烧">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/cai.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Choi_Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/27/art-upyun-cdn/" itemprop="url">使用又拍云的cdn加速GitHub Pages</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T17:08:27+08:00">
-                2018-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/02/27/art-upyun-cdn/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://caishaodong.top/2018/02/27/art-upyun-cdn/" class="cy_cmt_count" data-xid="2018/02/27/art-upyun-cdn/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在GitHubPages上搭建个人博客后,你会发现Github屏蔽百度爬虫导致在Github Pages上托管的博客、网站都无法被百度索引到。</p>
-<p>那么小编想到的是用CDN来加速自己博客，我采用的是<a href="https://www.upyun.com/" target="_blank" rel="noopener">又拍云</a>的CDN。</p>
-<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/33066863.jpg" alt=""></p>
-<p>我们需要创建一个CDN 服务</p>
-<ul>
-<li>服务名称自定义一个唯一的即可</li>
-<li>加速域名(填写github pages 的自定义域名，并不是github 分配的那个 xxx.github.io)</li>
-<li>源站地址(填写xxx.github.io github默认分配的域名)</li>
-</ul>
-<p>这样 一个CDN 服务就建立成功。</p>
-<p>然后我们需要配置自己的域名的DNS</p>
-<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/61176403.jpg" alt=""></p>
-<p>这里需要的是把加速域名指向又拍云CDN分配给你的域名</p>
-<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/44600514.jpg" alt=""></p>
-<p>最后需要的是配置github pages 的自定义域名</p>
-<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/58301774.jpg" alt=""></p>
-<p>等所有配置都生效后，你会发现现在的网站来源改变了。</p>
-<p><img src="http://ob5tof7al.bkt.clouddn.com/18-2-27/22797715.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1799,7 +1791,7 @@ services:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1821,7 +1813,7 @@ services:
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
